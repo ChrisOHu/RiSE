@@ -1,0 +1,3 @@
+[submodule "native-base"]
+    path = packages/NativeBase
+    url = https://github.com/ChrisOHu/NativeBase.git
