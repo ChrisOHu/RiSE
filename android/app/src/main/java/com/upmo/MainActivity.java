@@ -1,6 +1,8 @@
 package com.upmo;
 
 import com.facebook.react.ReactActivity;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
+import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -34,7 +36,9 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-            new MainReactPackage()
+            new MainReactPackage(),
+            new ReactNativePushNotificationPackage(this),
+            new CodePush(null, this, BuildConfig.DEBUG)
         );
     }
 }

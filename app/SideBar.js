@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import {
+import { StyleSheet } from 'react-native'
+
+import X from './base'
+const {
   View,
   Text,
   Button,
@@ -9,7 +12,7 @@ import {
   Badge,
   Content,
   Thumbnail
-} from 'native-base'
+} = X
 
 class SideBar extends Component {
 

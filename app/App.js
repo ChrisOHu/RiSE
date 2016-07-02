@@ -7,12 +7,14 @@ import {
   BackAndroid
 } from 'react-native'
 
-import { Drawer } from 'native-base';
-import CodePush from 'react-native-code-push';
+import CodePush from 'react-native-code-push'
 
 import { version } from './env.js'
 import SideBar from './SideBar'
 import AppNavigator from './AppNavigator'
+
+import X from './base'
+const { Drawer } = X;
 
 class App extends Component{
   constructor(props) {
@@ -37,7 +39,7 @@ class App extends Component{
 
   componentDidMount() {
     AppState.addEventListener('change', this.handleAppStateChange);
-    CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
+    // CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
 
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
   }
@@ -51,7 +53,7 @@ class App extends Component{
   handleAppStateChange(appState) {
     //'active', 'background'
     if (state === 'active') {
-      CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
+      // CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
     }
   }
 
@@ -76,7 +78,7 @@ class App extends Component{
       <Drawer
         ref={(ref) => this.refs.drawer = ref}
         type="overlay"
-        content={<SideBar navigator={this.refs.appNavigator.getNavigator()} />}
+        content={<SideBar />}
         tapToClose={true}
         acceptPan={false}
         onClose={() => this.refs.drawer.close()}
