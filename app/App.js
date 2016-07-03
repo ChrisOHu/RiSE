@@ -13,8 +13,7 @@ import { version } from './env.js'
 import SideBar from './SideBar'
 import AppNavigator from './AppNavigator'
 
-import X from './base'
-const { Drawer } = X;
+import { Drawer } from './base'
 
 class App extends Component{
   constructor(props) {

@@ -7,8 +7,7 @@ import {
   StyleSheet
 } from 'react-native'
 
-import X from './base'
-const {
+import {
   Container,
   Content,
   Text,
@@ -17,7 +16,7 @@ const {
   Button,
   Icon,
   View
-} = X;
+} from './base'
 
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'

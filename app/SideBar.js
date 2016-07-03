@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet } from 'react-native'
 
-import X from './base'
-const {
+import {
   View,
   Text,
   Button,
@@ -12,7 +11,7 @@ const {
   Badge,
   Content,
   Thumbnail
-} = X
+} from './base'
 
 class SideBar extends Component {
 
