@@ -15,7 +15,7 @@ import {
   Button,
   Icon,
   View
-} from './base'
+} from 'app/base'
 
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'
