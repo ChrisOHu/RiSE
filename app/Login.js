@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  DeviceEventEmitter,
   Dimensions,
   Image,
   Platform,
@@ -34,17 +33,6 @@ class Login extends Component {
   }
 
   componentWillMount () {
-    DeviceEventEmitter.addListener('keyboardWillShow', this.keyboardWillShow.bind(this))
-    DeviceEventEmitter.addListener('keyboardWillHide', this.keyboardWillHide.bind(this))
-  }
-
-  keyboardWillShow (e) {
-    let newSize = Dimensions.get('window').height - e.endCoordinates.height
-    this.setState({scroll: true})
-  }
-
-  keyboardWillHide (e) {
-    this.setState({scroll: false})
   }
 
   render() {
