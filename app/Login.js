@@ -17,6 +17,8 @@ import {
   View
 } from 'app/base'
 
+import SmartScrollView from 'app/components/SmartScrollView'
+
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'
 
@@ -38,37 +40,44 @@ class Login extends Component {
   render() {
     return (
       <Container>
-        <Content style={{backgroundColor: '#384850'}} theme={theme}>
-          <Image source={require('./assets/glow2.png')} style={styles.container}>
-            <Image source={require('./assets/logo.png')} style={styles.shadow}>
-              <View style={styles.bg}>
-                <InputGroup style={{marginBottom: 20}}>
-                  <Icon name="ios-person" />
-                  <Input placeholder="EMAIL" />
-                </InputGroup>
-                <InputGroup style={{marginBottom: 10}}>
-                  <Icon name="ios-unlock-outline" />
-                  <Input
-                    placeholder="PASSWORD"
-                    secureTextEntry={true}
-                    />
-                </InputGroup>
-                <Button transparent style={{alignSelf: 'flex-end',  marginBottom: (Platform.OS === 'ios' ) ? 10 : 0, marginTop: (Platform.OS === 'ios' ) ? -10 : 0}}>
-                  <Text>
-                    Forgot Password
-                  </Text>
-                </Button>
-                <Button rounded block style={{marginBottom: 10}} onPress={() => this.replaceRoute('home')}>
-                  Login
-                </Button>
-                <Button transparent style={{alignSelf: 'center'}} onPress={() => this.pushNewRoute('signUp')}>
-                  <Text>
-                    Sign Up Here
-                  </Text>
-                </Button>
-              </View>
-            </Image>
-          </Image>
+        <Content style={styles.content} theme={theme}>
+          <Image source={require('./assets/logo.png')} style={styles.logo} />
+
+          <View style={styles.form}>
+            <InputGroup style={{marginBottom: 20}}>
+              <Icon name="ios-person" />
+              <Input placeholder="EMAIL" />
+            </InputGroup>
+            <InputGroup style={{marginBottom: 10}}>
+              <Icon name="ios-unlock-outline" />
+              <Input
+                placeholder="PASSWORD"
+                secureTextEntry={true}
+                />
+            </InputGroup>
+
+            <InputGroup style={{marginBottom: 10}}>
+              <Icon name="ios-unlock-outline" />
+              <Input
+                placeholder="PASSWORD"
+                secureTextEntry={true}
+                />
+            </InputGroup>
+
+            <Button transparent style={{alignSelf: 'flex-end',  marginBottom: (Platform.OS === 'ios' ) ? 10 : 0, marginTop: (Platform.OS === 'ios' ) ? -10 : 0}}>
+              <Text>
+                Forgot Password
+              </Text>
+            </Button>
+            <Button rounded block style={{marginBottom: 10}} onPress={() => this.replaceRoute('home')}>
+              Login
+            </Button>
+            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.pushNewRoute('signUp')}>
+              <Text>
+                Sign Up Here
+              </Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     )
@@ -79,26 +88,25 @@ class Login extends Component {
 
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: null,
-        height: null,
-    },
-    shadow: {
-        flex: 1,
-        width: null,
-        height: null,
-        backgroundColor: 'transparent'
-    },
-    bg: {
-        flex: 1,
-        marginTop: (deviceHeight/2)-15,
-        backgroundColor: '#00c497',
-        paddingTop: 20,
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingBottom: 70
-    },
+  content: {
+    backgroundColor: '#00c497'
+  },
+  logo: {
+    width: null,
+    height: 300,
+    resizeMode: 'contain',
+    backgroundColor: 'skyblue'
+  },
+  form: {
+    flex: 1,
+    width: null,
+    height: null,
+    marginTop: 0,
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 70
+  },
 
 });
 

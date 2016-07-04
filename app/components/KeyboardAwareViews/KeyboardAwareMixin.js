@@ -1,12 +1,14 @@
 /* @flow */
 
 import { PropTypes } from 'react'
-import ReactNative, { TextInput, Keyboard } from 'react-native'
+import ReactNative, { TextInput, Keyboard, Platform } from 'react-native'
 import TimerMixin from 'react-timer-mixin'
 
 const _KAM_DEFAULT_TAB_BAR_HEIGHT = 49
 const _KAM_KEYBOARD_OPENING_TIME = 250
 const _KAM_EXTRA_HEIGHT = 75
+
+const isAndroid = () => Platform.OS === 'android'
 
 const KeyboardAwareMixin = {
   mixins: [TimerMixin],
@@ -55,7 +57,8 @@ const KeyboardAwareMixin = {
       try {
         this.scrollToFocusedInputWithNodeHandle(currentlyFocusedField)
       } catch (e) {
-
+        console.error('OPs =>');
+        console.error(e);
       }
     }
   },
@@ -73,8 +76,12 @@ const KeyboardAwareMixin = {
 
   componentDidMount: function () {
     // Keyboard events
-    this.keyboardWillShowEvent = Keyboard.addListener('keyboardWillShow', this.updateKeyboardSpace)
-    this.keyboardWillHideEvent = Keyboard.addListener('keyboardWillHide', this.resetKeyboardSpace)
+    const events = {
+      show: isAndroid() ? 'keyboardDidShow' : 'keyboardWillShow',
+      hide: isAndroid() ? 'keyboardDidHide' : 'keyboardWillHide',
+    }
+    this.keyboardWillShowEvent = Keyboard.addListener(events.show, this.updateKeyboardSpace)
+    this.keyboardWillHideEvent = Keyboard.addListener(events.hide, this.resetKeyboardSpace)
   },
 
   componentWillUnmount: function () {
@@ -91,11 +98,15 @@ const KeyboardAwareMixin = {
    * @param extraHeight: takes an extra height in consideration.
    */
   scrollToFocusedInput: function (reactNode: Object, extraHeight: number = this.props.extraHeight) {
+    // Android already does this
+    if(isAndroid()) return;
+
     const scrollView = this.refs._rnkasv_keyboardView.getScrollResponder()
     this.setTimeout(() => {
-      scrollView.scrollResponderScrollNativeHandleToKeyboard(
-        reactNode, extraHeight, true
-      )
+      //FIXME:
+      // scrollView.scrollResponderScrollNativeHandleToKeyboard(
+      //   reactNode, extraHeight, true
+      // )
     }, _KAM_KEYBOARD_OPENING_TIME)
   },
 

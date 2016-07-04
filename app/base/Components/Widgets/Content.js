@@ -2,7 +2,8 @@
 'use strict';
 
 import React from 'react';
-import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews';
+// import { ScrollView } from 'react-native';
+import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
 import NativeBaseComponent from '../Base/NativeBaseComponent';
 import computeProps from '../../Utils/computeProps';
 
