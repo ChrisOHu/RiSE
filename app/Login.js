@@ -69,10 +69,10 @@ class Login extends Component {
                 Forgot Password
               </Text>
             </Button>
-            <Button rounded block style={{marginBottom: 10}} onPress={() => this.replaceRoute('home')}>
+            <Button rounded block style={{marginBottom: 10}} onPress={() => this.props.navigator.replace({id: 'home'})}>
               Login
             </Button>
-            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.pushNewRoute('signUp')}>
+            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.props.navigator.push({id: 'signUp'})}>
               <Text>
                 Sign Up Here
               </Text>
