@@ -4,8 +4,8 @@ import {
   Platform
 } from 'react-native'
 
-import Login from './Login'
-import Home from './Home'
+import LoginPage from './LoginPage'
+import HomePage from './HomePage'
 
 class AppNavigator extends Component {
   constructor(props) {
@@ -34,10 +34,10 @@ class AppNavigator extends Component {
   renderScene(route, navigator) {
     switch (route.id) {
       case 'home':
-        return <Home navigator={navigator} />;
+        return <HomePage navigator={navigator} />;
       case 'login':
       default:
-        return <Login navigator={navigator} />;
+        return <LoginPage navigator={navigator} />;
     }
   }
 }

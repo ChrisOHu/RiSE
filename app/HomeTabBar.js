@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import { Icon } from 'app/base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const HomeTabBar = React.createClass({
   tabIcons: [],
@@ -51,14 +51,16 @@ const HomeTabBar = React.createClass({
             iconName = 'ios-paper';
             break;
         }
-        return <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
-          <Icon
-            name={iconName}
-            size={30}
-            color={this.props.activeTab === i ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
-            ref={(icon) => { this.tabIcons[i] = icon; }}
-          />
-        </TouchableOpacity>;
+        return (
+          <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
+            <Icon
+              name={iconName}
+              size={30}
+              color={this.props.activeTab === i ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+              ref={(icon) => { this.tabIcons[i] = icon; }}
+            />
+          </TouchableOpacity>
+        );
       })}
     </View>;
   },

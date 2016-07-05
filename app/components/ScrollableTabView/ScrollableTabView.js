@@ -274,8 +274,6 @@ const ScrollableTabView = React.createClass({
   },
 });
 
-module.exports = ScrollableTabView;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -284,3 +282,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default ScrollableTabView

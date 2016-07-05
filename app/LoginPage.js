@@ -22,7 +22,7 @@ import SmartScrollView from 'app/components/SmartScrollView'
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'
 
-class Login extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props)
 
@@ -207,4 +207,4 @@ const theme = {
   }
 }
 
-export default Login
+export default LoginPage
