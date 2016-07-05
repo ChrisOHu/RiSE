@@ -72,7 +72,7 @@ class Login extends Component {
             <Button rounded block style={{marginBottom: 10}} onPress={() => this.props.navigator.replace({id: 'home'})}>
               Login
             </Button>
-            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.props.navigator.push({id: 'signUp'})}>
+            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.props.navigator.push({id: 'home'})}>
               <Text>
                 Sign Up Here
               </Text>
