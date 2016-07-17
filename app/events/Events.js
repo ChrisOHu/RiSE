@@ -8,6 +8,7 @@ import {
 
 // import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
 import GiftedListView from '../components/GiftedListView'
+import ToolBar from './ToolBar'
 
 class Events extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class Events extends Component {
   render() {
     return (
       <View style={[styles.content, this.props.style]}>
+        <ToolBar />
         <GiftedListView
           rowView={this._renderRowView}
           onFetch={this._onFetch}

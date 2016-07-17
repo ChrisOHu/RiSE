@@ -6,5 +6,4 @@ import {
 
 import App from './app/App'
 
-StatusBarIOS.setStyle('light-content');
 AppRegistry.registerComponent('upmo', () => App);

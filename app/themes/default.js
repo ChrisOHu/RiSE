@@ -1,39 +1,42 @@
 
 import {Platform} from 'react-native';
 
-module.exports = {
-    brandPrimary : "#428bca",
-    brandInfo: "#5bc0de",
-    brandSuccess: "#5cb85c",
-    brandDanger: "#d9534f",
-    brandWarning: "#f0ad4e",
-    brandSidebar: "#252932",
+import colors from './colors'
 
-    brandSecondary: "#00c497",   //new style
+export default {
+    brandPrimary    : colors.cornflowerblue,
+    brandInfo       : "#5bc0de",
+    brandSuccess    : "#5cb85c",
+    brandDanger     : "#d9534f",
+    brandWarning    : "#f0ad4e",
+    brandSidebar    : "#252932",
 
-    inverseTextColor: "#000",
-    textColor: "#fff",
+    brandSecondary  : "#00c497", //new style
 
-    fontSizeBase: 15,
-    titleFontSize: 18,
+    inverseTextColor: colors.dark,
+    textColor       : colors.white,
+    foregroundColor : colors.white,
+
+    rootFontSize    : 15,
+    titleFontSize   : 18,
 
     get fontSizeH1 () {
-        return this.fontSizeBase*1.8;
+        return this.rootFontSize*1.8;
     },
     get fontSizeH2 () {
-        return this.fontSizeBase* 1.6;
+        return this.rootFontSize* 1.6;
     },
     get fontSizeH3 () {
-        return this.fontSizeBase* 1.4;
+        return this.rootFontSize* 1.4;
     },
     get btnTextSize () {
-        return this.fontSizeBase* 1.1;
+        return this.rootFontSize* 1.1;
     },
     get btnTextSizeLarge () {
-        return this.fontSizeBase* 1.5;
+        return this.rootFontSize* 1.5;
     },
     get btnTextSizeSmall () {
-        return this.fontSizeBase* .8;
+        return this.rootFontSize* .8;
     },
     get iconSizeLarge () {
         return this.iconFontSize* 1.4;
@@ -45,7 +48,7 @@ module.exports = {
     borderRadiusBase: 4,
 
     get borderRadiusLarge () {
-        return this.fontSizeBase* 3.8;
+        return this.rootFontSize* 3.8;
     },
 
     footerHeight: 55,
