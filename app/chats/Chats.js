@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
 import {
   View,
+  Text,
   StyleSheet
 } from 'react-native'
 
-import {
-  Text
-} from 'app/base'
-
 import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
 
+import Meteor, { createConainter } from 'react-native-meteor'
+
 class Chats extends Component {
+  static propTypes = {}
+  static defaultProps = {}
+  
   constructor(props) {
     super(props)
 

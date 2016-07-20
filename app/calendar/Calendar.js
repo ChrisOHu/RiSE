@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
 import {
   View,
   StyleSheet
 } from 'react-native'
-
 import {
   Text
 } from 'app/base'
 
 import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
+
+import Meteor, { createConainter } from 'react-native-meteor'
 
 class Calendar extends Component {
   constructor(props) {
@@ -22,7 +26,7 @@ class Calendar extends Component {
     return (
       <KeyboardAwareScrollView style={[styles.content, this.props.style]}>
         <View style={styles.card}>
-          <Text>Events</Text>
+          <Text>Calendar</Text>
         </View>
       </KeyboardAwareScrollView>
     );

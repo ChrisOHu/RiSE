@@ -36,7 +36,7 @@ class HomePage extends Component {
         <View style={styles.content} >
 
           <ScrollableTabView
-            initialPage={1}
+            initialPage={0}
             tabBarPosition={"bottom"}
             renderTabBar={() => <HomeTabBar />}
             >
@@ -46,7 +46,7 @@ class HomePage extends Component {
             <Calendar tabLabel="calendar" style={styles.tabView} />
 
             <Chats tabLabel="chats" style={styles.tabView} />
-            
+
             <I tabLabel="I" style={styles.tabView} />
 
           </ScrollableTabView>

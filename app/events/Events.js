@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, {
+  PropTypes as T,
+  Component
+} from 'react'
 import {
   StyleSheet,
   Text,
@@ -6,11 +9,19 @@ import {
   TouchableHighlight
 } from 'react-native'
 
-// import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
 import GiftedListView from '../components/GiftedListView'
 import ToolBar from './ToolBar'
+import EventCard from './EventCard'
+import theme from 'app/themes/default'
+
+import Meteor, { createContainer } from 'react-native-meteor'
 
 class Events extends Component {
+  static propTypes = {
+    events: T.array
+  }
+  static defaultProps = { }
+
   constructor(props) {
     super(props)
 
@@ -37,13 +48,14 @@ class Events extends Component {
   }
 
   _renderRowView(rowData) {
+    console.debug(rowData);
     return (
       <TouchableHighlight
         style={styles.row}
         underlayColor='#c8c7cc'
         onPress={() => this._onPress(rowData)}
       >
-        <Text>{rowData}</Text>
+        <EventCard theme={theme} />
       </TouchableHighlight>
     );
   }
@@ -83,4 +95,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Events
+export default createContainer(params => {
+  return {
+    events: []
+  }
+}, Events)

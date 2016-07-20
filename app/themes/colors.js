@@ -4,6 +4,7 @@
  */
 
 export default {
+  /** CSS colors ***********************/
   "aliceblue"           : "#f0f8ff",
   "antiquewhite"        : "#faebd7",
   "aqua"                : "#00ffff",
@@ -151,5 +152,8 @@ export default {
   "white"               : "#ffffff",
   "whitesmoke"          : "#f5f5f5",
   "yellow"              : "#ffff00",
-  "yellowgreen"         : "#9acd32"
+  "yellowgreen"         : "#9acd32",
+
+  /** Custom colors ****************/
+  "lightblack"           : "#252932"
 }
