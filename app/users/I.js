@@ -83,17 +83,12 @@ class I extends Component {
           </View>
         )} >
 
-        <View style={{ flex: 1, alignItems: 'center' }}><Text style={{ fontSize: 30 }}>Meow!</Text></View>
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <Text style={{ fontSize: 30 }}>{this.props.i.username}</Text>
+        </View>
 
       </ParallaxScrollView>
     )
-    // return (
-    //   <KeyboardAwareScrollView style={[styles.content, this.props.style]}>
-    //     <View style={styles.card}>
-    //       <Text>Events</Text>
-    //     </View>
-    //   </KeyboardAwareScrollView>
-    // );
   }
 
 }
