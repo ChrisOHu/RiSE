@@ -9,10 +9,9 @@ import {
   Dimensions,
   StyleSheet
 } from 'react-native'
-import ParallaxScrollView from 'app/components/ParallaxScrollView'
-import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
+import ParallaxScrollView from 'common/ParallaxScrollView'
+import { KeyboardAwareScrollView } from 'common/KeyboardAwareViews'
 import { createConainter } from 'react-native-meteor'
-import ToolBar from './ToolBar'
 import theme from 'app/themes/default'
 
 class I extends Component {

@@ -11,16 +11,16 @@ import {
 import {
   Text,
   Container
-} from 'app/base'
+} from 'base'
 
-import { ScrollableTabView } from 'app/components/ScrollableTabView'
+import { ScrollableTabView } from 'common/ScrollableTabView'
 
 import theme from "app/themes/default"
-import HomeTabBar from 'app/HomeTabBar'
-import Events from 'app/events/Events'
-import Calendar from 'app/calendar/Calendar'
-import Chats from 'app/chats/Chats'
-import I from 'app/users/I'
+import HomeTabBar from './HomeTabBar'
+import Events from './events/Events'
+import Calendar from './calendar/Calendar'
+import Chats from './chats/Chats'
+import I from './users/I'
 
 class HomePage extends Component {
   constructor(props) {

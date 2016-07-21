@@ -15,9 +15,9 @@ import {
   Button,
   Icon,
   View
-} from 'app/base'
+} from 'base'
 
-import SmartScrollView from 'app/components/SmartScrollView'
+import SmartScrollView from 'common/SmartScrollView'
 
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'

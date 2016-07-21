@@ -3,7 +3,7 @@
 
 import React from 'react';
 // import { ScrollView } from 'react-native';
-import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
+import { KeyboardAwareScrollView } from 'common/KeyboardAwareViews'
 import NativeBaseComponent from '../Base/NativeBaseComponent';
 import computeProps from '../../Utils/computeProps';
 

@@ -11,7 +11,7 @@ import {
   Badge,
   Content,
   Thumbnail
-} from './base'
+} from 'base'
 
 class SideBar extends Component {
 

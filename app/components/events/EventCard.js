@@ -16,7 +16,7 @@ import {
   Thumbnail,
   Text,
   Icon
-} from 'app/base'
+} from 'base'
 
 import theme from 'app/themes/default'
 

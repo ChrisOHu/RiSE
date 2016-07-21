@@ -9,7 +9,7 @@ import {
   TouchableHighlight
 } from 'react-native'
 
-import GiftedListView from '../components/GiftedListView'
+import GiftedListView from 'common/GiftedListView'
 import ToolBar from './ToolBar'
 import EventCard from './EventCard'
 import theme from 'app/themes/default'

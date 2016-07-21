@@ -2,8 +2,9 @@
   "presets": ["react-native"],
   "plugins": [
     ["module-alias", [
-      { "src": "./app", "expose": "app" }
+      { "src": "./app",              "expose": "app" },
+      { "src": "./app/common",       "expose": "common" },
+      { "src": "./app/common/base",  "expose": "base" }
     ]]
   ]
 }
-

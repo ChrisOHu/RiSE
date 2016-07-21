@@ -16,13 +16,15 @@
     "react-native-code-push": "^1.13.1-beta",
     "react-native-easy-grid": "^0.1.6",
     "react-native-gifted-spinner": "0.0.5",
+    "react-native-i18n": "0.0.8",
     "react-native-meteor": "^1.0.0-rc14",
     "react-native-modalbox": "^1.3.3",
     "react-native-push-notification": "^1.0.7",
     "react-native-vector-icons": "2.0.x",
     "react-static-container": "^1.0.1",
     "react-timer-mixin": "^0.13.3",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.3.4"
   },
   "devDependencies": {
     "babel-preset-react-native": "^1.9.0",

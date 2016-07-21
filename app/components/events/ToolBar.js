@@ -9,7 +9,7 @@ import {
   InputGroup,
   Input,
   Icon
-} from 'app/base'
+} from 'base'
 import theme from 'app/themes/default'
 
 class ToolBar extends Component {
