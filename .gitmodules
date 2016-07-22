@@ -1,1 +1,8 @@
+[submodule "react-native-uploader"]
+    path = modules/react-native-uploader
+    url = git@github.com:ChrisOHu/react-native-uploader.git
+
+[submodule "react-native-image-crop-picker"]
+    path = modules/react-native-image-crop-picker
+    url = git@github.com:ChrisOHu/react-native-image-crop-picker.git
 

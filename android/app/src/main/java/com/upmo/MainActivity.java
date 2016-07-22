@@ -1,6 +1,9 @@
 package com.upmo;
 
 import com.facebook.react.ReactActivity;
+import com.reactnative.imagepicker.PickerPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.burlap.filetransfer.FileTransferPackage;
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.microsoft.codepush.react.CodePush;
@@ -38,6 +41,9 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new PickerPackage(),
+            new VectorIconsPackage(),
+            new FileTransferPackage(),
             new ReactNativeI18n(),
             new ReactNativePushNotificationPackage(this),
             new CodePush(null, this, BuildConfig.DEBUG)
