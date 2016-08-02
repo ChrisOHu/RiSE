@@ -10,13 +10,8 @@ import {
   Image,
   StyleSheet
 } from 'react-native'
-import {
-  Card,
-  CardItem,
-  Thumbnail,
-  Text,
-  Icon
-} from 'base'
+
+import Pallete from 'Pallete'
 
 import theme from 'app/themes/default'
 
@@ -34,23 +29,23 @@ class EventCard extends Component {
   render() {
     const { theme, event } = this.props.event;
     return (
-      <Card theme={theme}>
+      <Pallete.Card theme={theme}>
 
-        <CardItem>
-          <Thumbnail source={require(event.club.avatar)} />
-          <Text>{event.club.name}</Text>
-        </CardItem>
+        <Pallete.CardItem>
+          <Pallete.Thumbnail source={require(event.club.avatar)} />
+          <Pallete.Text>{event.club.name}</Pallete.Text>
+        </Pallete.CardItem>
 
-        <CardItem>
+        <Pallete.CardItem>
           <Image style={{ resizeMode: 'cover' }} source={require(event.poster)} />
-        </CardItem>
+        </Pallete.CardItem>
 
-        <CardItem>
+        <Pallete.CardItem>
           <Icon name={'ios-musical-notes'} style={{color : '#ED4A6A'}} />
           <Text>Listen now</Text>
-        </CardItem>
+        </Pallete.CardItem>
 
-      </Card>
+      </Pallete.Card>
     )
   }
 }

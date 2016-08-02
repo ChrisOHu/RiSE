@@ -4,11 +4,9 @@ import React, {
 } from 'react'
 import {
   View,
+  Text,
   StyleSheet
 } from 'react-native'
-import {
-  Text
-} from 'base'
 
 import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
 

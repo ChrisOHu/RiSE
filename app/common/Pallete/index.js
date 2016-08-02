@@ -30,7 +30,7 @@ import Badge from './Components/Widgets/Badge';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ScrollableTabView from './Components/Widgets/Tabs';
 
-export {
+const Pallete = {
 	Header,
 	Footer,
 	Title,
@@ -62,3 +62,5 @@ export {
 	Drawer,
 	ScrollableTabView
 }
+
+export default Pallete

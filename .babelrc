@@ -4,7 +4,7 @@
     ["module-alias", [
       { "src": "./app",              "expose": "app" },
       { "src": "./app/common",       "expose": "common" },
-      { "src": "./app/common/base",  "expose": "base" }
+      { "src": "./app/common/Pallete",  "expose": "Pallete" }
     ]]
   ]
 }

@@ -8,10 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-import {
-  Text,
-  Container
-} from 'base'
+import Pallete from 'Pallete'
 
 import { ScrollableTabView } from 'common/ScrollableTabView'
 
@@ -32,7 +29,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <Container theme={theme} style={styles.container} >
+      <Pallete.Container theme={theme} style={styles.container} >
         <View style={styles.content} >
 
           <ScrollableTabView
@@ -52,7 +49,7 @@ class HomePage extends Component {
           </ScrollableTabView>
 
         </View>
-      </Container>
+      </Pallete.Container>
     );
   }
 

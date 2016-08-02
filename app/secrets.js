@@ -2,7 +2,7 @@
 
 let IS_DEV = true
 
-SECRETS
+let SECRETS = null
 
 if (IS_DEV) {
   SECRETS = {

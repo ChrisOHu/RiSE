@@ -5,11 +5,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native'
-import {
-  InputGroup,
-  Input,
-  Icon
-} from 'base'
+import Pallete from 'Pallete'
 import theme from 'app/themes/default'
 
 class ToolBar extends Component {
@@ -23,14 +19,14 @@ class ToolBar extends Component {
   render() {
     return (
       <View style={styles.content}>
-        <InputGroup theme={theme} borderType="regular" iconRight >
-          <Input placeholder="Search" />
-          <Icon name="ios-search" />
-        </InputGroup>
+        <Pallete.InputGroup theme={theme} borderType="regular" iconRight >
+          <Pallete.Input placeholder="Search" />
+          <Pallete.Icon name="ios-search" />
+        </Pallete.InputGroup>
 
         <TouchableOpacity style={styles.action} >
           <View>
-            <Icon name="ios-calendar-outline" color={theme.brandPrimary} size={25} />
+            <Pallete.Icon name="ios-calendar-outline" color={theme.brandPrimary} size={25} />
           </View>
         </TouchableOpacity>
       </View>

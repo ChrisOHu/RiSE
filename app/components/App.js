@@ -13,7 +13,7 @@ import { version } from './env.js'
 import SideBar from './SideBar'
 import AppNavigator from './AppNavigator'
 
-import { Drawer } from 'base'
+import Pallete from 'Pallete'
 
 class App extends Component{
   constructor(props) {
@@ -74,7 +74,7 @@ class App extends Component{
 
   render() {
     return (
-      <Drawer
+      <Pallete.Drawer
         ref={(ref) => this.refs.drawer = ref}
         type="overlay"
         content={<SideBar />}
@@ -87,7 +87,7 @@ class App extends Component{
 
         <AppNavigator />
 
-      </Drawer>
+      </Pallete.Drawer>
     );
   }
 

@@ -6,16 +6,7 @@ import {
   StyleSheet
 } from 'react-native'
 
-import {
-  Container,
-  Content,
-  Text,
-  InputGroup,
-  Input,
-  Button,
-  Icon,
-  View
-} from 'base'
+import Pallete from 'Pallete'
 
 import SmartScrollView from 'common/SmartScrollView'
 
@@ -39,47 +30,47 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <Container>
-        <Content style={styles.content} theme={theme}>
+      <Pallete.Container>
+        <Pallete.Content style={styles.content} theme={theme}>
           <Image source={require('./assets/logo.png')} style={styles.logo} />
 
-          <View style={styles.form}>
-            <InputGroup style={{marginBottom: 20}}>
-              <Icon name="ios-person" />
-              <Input placeholder="EMAIL" />
-            </InputGroup>
-            <InputGroup style={{marginBottom: 10}}>
-              <Icon name="ios-unlock-outline" />
-              <Input
+          <Pallete.View style={styles.form}>
+            <Pallete.InputGroup style={{marginBottom: 20}}>
+              <Pallete.Icon name="ios-person" />
+              <Pallete.Input placeholder="EMAIL" />
+            </Pallete.InputGroup>
+            <Pallete.InputGroup style={{marginBottom: 10}}>
+              <Pallete.Icon name="ios-unlock-outline" />
+              <Pallete.Input
                 placeholder="PASSWORD"
                 secureTextEntry={true}
                 />
-            </InputGroup>
+            </Pallete.InputGroup>
 
-            <InputGroup style={{marginBottom: 10}}>
-              <Icon name="ios-unlock-outline" />
-              <Input
+            <Pallete.InputGroup style={{marginBottom: 10}}>
+              <Pallete.Icon name="ios-unlock-outline" />
+              <Pallete.Input
                 placeholder="PASSWORD"
                 secureTextEntry={true}
                 />
-            </InputGroup>
+            </Pallete.InputGroup>
 
-            <Button transparent style={{alignSelf: 'flex-end',  marginBottom: (Platform.OS === 'ios' ) ? 10 : 0, marginTop: (Platform.OS === 'ios' ) ? -10 : 0}}>
-              <Text>
+            <Pallete.Button transparent style={{alignSelf: 'flex-end',  marginBottom: (Platform.OS === 'ios' ) ? 10 : 0, marginTop: (Platform.OS === 'ios' ) ? -10 : 0}}>
+              <Pallete.Text>
                 Forgot Password
-              </Text>
-            </Button>
-            <Button rounded block style={{marginBottom: 10}} onPress={() => this.props.navigator.replace({id: 'home'})}>
+              </Pallete.Text>
+            </Pallete.Button>
+            <Pallete.Button rounded block style={{marginBottom: 10}} onPress={() => this.props.navigator.replace({id: 'home'})}>
               Login
-            </Button>
-            <Button transparent style={{alignSelf: 'center'}} onPress={() => this.props.navigator.push({id: 'home'})}>
-              <Text>
+            </Pallete.Button>
+            <Pallete.Button transparent style={{alignSelf: 'center'}} onPress={() => this.props.navigator.push({id: 'home'})}>
+              <Pallete.Text>
                 Sign Up Here
-              </Text>
-            </Button>
-          </View>
-        </Content>
-      </Container>
+              </Pallete.Text>
+            </Pallete.Button>
+          </Pallete.View>
+        </Pallete.Content>
+      </Pallete.Container>
     )
   }
 
