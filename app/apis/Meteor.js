@@ -8,5 +8,3 @@ export function init() {
   // Meteor.ddp.on('added')
   // Meteor.ddp.on('changed')
 }
-
-export default Meteor;

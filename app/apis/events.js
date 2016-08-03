@@ -1,6 +1,6 @@
 import _s from 'underscore.string'
 import t from 'app/i18n'
-import Meteor from './Meteor'
+import Meteor from 'react-native-meteor'
 import { upload as ossUpload } from './clouds/aliyun/OSS'
 
 let events = new class {

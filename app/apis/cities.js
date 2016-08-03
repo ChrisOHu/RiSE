@@ -1,6 +1,6 @@
 import _s from 'underscore.string'
 import t from 'app/i18n'
-import Meteor from './Meteor'
+import Meteor from 'react-native-meteor'
 
 export function getCitiesOfCountry(countryCode, query) {
   return new Promise((resolve, reject) => {
