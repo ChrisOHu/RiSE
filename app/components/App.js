@@ -6,14 +6,13 @@ import {
   StatusBar,
   BackAndroid
 } from 'react-native'
-
 import CodePush from 'react-native-code-push'
-
 import { version } from './env.js'
 import SideBar from './SideBar'
 import AppNavigator from './AppNavigator'
-
 import Pallete from 'Pallete'
+import { init as initMeteor } from '../apis/Meteor'
+import { init as initI18N } from '../i18n'
 
 class App extends Component{
   constructor(props) {
@@ -37,6 +36,9 @@ class App extends Component{
   }
 
   componentDidMount() {
+    initMeteor();
+    initI18N();
+
     AppState.addEventListener('change', this.handleAppStateChange);
     // CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
 

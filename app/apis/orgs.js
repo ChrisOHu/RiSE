@@ -1,6 +1,6 @@
-import t from 'counterpart'
 import _s from 'underscore.string'
-import { Log } from 'meteor/up:core'
+import t from 'app/i18n'
+import Meteor from './Meteor'
 import { upload as ossUpload } from './clouds/aliyun/OSS'
 
 let orgs = new class {
@@ -12,16 +12,11 @@ let orgs = new class {
     let orgId;
     return new Promise((resolve, reject) => {
       let newOrg = {name, city, descriptions, tags};
-      Log.debug('orgs.createOrg:');
-      Log.debug(newOrg);
-      Log.debug('    =>');
-      Meteor.DC.call('orgs.createOrg', newOrg, (error, newOrgId) => {
+      Meteor.call('orgs.createOrg', newOrg, (error, newOrgId) => {
         if (error) {
-          Log.error(error);
           reject(error);
         } else {
           orgId = newOrgId;
-          Log.debug(`new organization id: ${orgId}`);
           resolve(newOrgId);
         }
       });
@@ -39,9 +34,7 @@ let orgs = new class {
   }
   updateOrgPoster(orgId, posterUrl) {
     return new Promise((resolve, reject) => {
-      Log.debug('orgs.updateOrgPoster:');
-      Log.debug(`  orgId=${orgId}  url=${posterUrl}`);
-      Meteor.DC.call('orgs.updateOrgPoster', orgId, posterUrl, (error, result) => {
+      Meteor.call('orgs.updateOrgPoster', orgId, posterUrl, (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -52,7 +45,7 @@ let orgs = new class {
   }
   getMyOrgs() {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('orgs.getMyOrgs', (error, result) => {
+      Meteor.call('orgs.getMyOrgs', (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -63,7 +56,7 @@ let orgs = new class {
   }
   getOrg(orgId) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('orgs.getOrg', orgId, (error, result) => {
+      Meteor.call('orgs.getOrg', orgId, (error, result) => {
         if (error) {
           reject(error);
         } else {

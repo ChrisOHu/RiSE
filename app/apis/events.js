@@ -1,6 +1,6 @@
-import t from 'counterpart'
 import _s from 'underscore.string'
-import { Log } from 'meteor/up:core'
+import t from 'app/i18n'
+import Meteor from './Meteor'
 import { upload as ossUpload } from './clouds/aliyun/OSS'
 
 let events = new class {
@@ -12,16 +12,11 @@ let events = new class {
     let eventId;
     return new Promise((resolve, reject) => {
       let newEvent = {name, time, descriptions, address, tags, clubId};
-      Log.debug('events.createEvent:');
-      Log.debug(newEvent);
-      Log.debug('    =>');
-      Meteor.DC.call('events.createEvent', newEvent, (error, newEventId) => {
+      Meteor.call('events.createEvent', newEvent, (error, newEventId) => {
         if (error) {
-          Log.error(error);
           reject(error);
         } else {
           eventId = newEventId;
-          Log.debug(`new event id: ${newEventId}`);
           resolve(newEventId);
         }
       });
@@ -39,25 +34,18 @@ let events = new class {
   }
   updateEventPoster(eventId, posterUrl) {
     return new Promise((resolve, reject) => {
-      Log.debug('events.updateEventPoster:');
-      Log.debug(`  eventId=${eventId}  url=${posterUrl}`);
-      Meteor.DC.call('events.updateEventPoster', eventId, posterUrl, (error, result) => {
+      Meteor.call('events.updateEventPoster', eventId, posterUrl, (error, result) => {
         if (error) {
           reject(error);
-          if (error) {
-            Log.error(error);
-          }
         } else {
           resolve(result);
-          Log.debug('  =>');
-          Log.debug(result);
         }
       });
     });
   }
   getEvents(filter, from, to, count) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('events.getEvents', filter, from, to, count, (error, result) => {
+      Meteor.call('events.getEvents', filter, from, to, count, (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -68,7 +56,7 @@ let events = new class {
   }
   getEvent(eventId) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('events.getEvent', eventId, (error, result) => {
+      Meteor.call('events.getEvent', eventId, (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -79,7 +67,7 @@ let events = new class {
   }
   joinEvent(eventId) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('events.joinEvent', eventId, (error, result) => {
+      Meteor.call('events.joinEvent', eventId, (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -90,7 +78,7 @@ let events = new class {
   }
   leaveEvent(eventId) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('events.leaveEvent', eventId, (error, result) => {
+      Meteor.call('events.leaveEvent', eventId, (error, result) => {
         if (error) {
           reject(error);
         } else {
@@ -101,7 +89,7 @@ let events = new class {
   }
   commentEvent(eventId, commentText) {
     return new Promise((resolve, reject) => {
-      Meteor.DC.call('events.commentEvent', eventId, commentText, (error, result) => {
+      Meteor.call('events.commentEvent', eventId, commentText, (error, result) => {
         if (error) {
           reject(error);
         } else {

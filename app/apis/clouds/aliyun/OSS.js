@@ -1,4 +1,3 @@
-import ALY from 'aliyun-sdk'
 import { OSS_SECRETS } from 'app/secrets'
 import { hmac, Base64 } from 'app/utils/crypto'
 
@@ -14,7 +13,7 @@ const POST_POLICY =
 const BASE64_ENCODED_POST_POLICY = Base64.encode(POST_POLICY)
 const SIGNATURE = hmac(OSS_SECRETS.secretAccessKey, BASE64_ENCODED_POST_POLICY, 'base64', 'sha1')
 
-function uploadFile(fileUri, fileKey, fileName, fileType = "application/octet-stream") {
+function upload(fileUri, fileKey, fileName, fileType = "application/octet-stream") {
   let formData = new FormData();
   formData.append("OSSAccessKeyId", OSS_SECRETS.accessKeyId);
   formData.append("policy", BASE64_ENCODED_POST_POLICY);
@@ -31,5 +30,5 @@ function uploadFile(fileUri, fileKey, fileName, fileType = "application/octet-st
 }
 
 export default {
-  uploadFile
+  upload
 }

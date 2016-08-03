@@ -1,6 +1,6 @@
-import t from 'counterpart'
 import _s from 'underscore.string'
-import { Log } from 'meteor/up:core'
+import t from 'app/i18n'
+import Meteor from './Meteor'
 import { upload as ossUpload } from './clouds/aliyun/OSS'
 
 const SUCCESS            = 'SUCCESS';
@@ -50,7 +50,7 @@ let Users = new class {
         });
       }
 
-      Accounts.createUser({username, password}, function(error) {
+      Meteor.Accounts.createUser({username, password}, function(error) {
         if (!error) {
           resolve({
             ret: SUCCESS
@@ -101,14 +101,12 @@ let Users = new class {
         reject({ret: INVALID_PARAMS});
       }
 
-      Log.debug(`getUserInfo => ${userId}`);
-
       if (userId === Meteor.userId() && Meteor.user()) {
         let user = Meteor.user();
         resolve({ret: SUCCESS, data: Meteor.user()});
       }
 
-      Meteor.DC.call('users.getUserInfo', userId, function(error, result) {
+      Meteor.call('users.getUserInfo', userId, function(error, result) {
         if (error) {
           reject({ret: ERROR, error: error});
         }
@@ -122,7 +120,7 @@ let Users = new class {
       if (!profile) reject('null profile');
       CommonSchemas.UserProfile.validate(profile);
 
-      Meteor.DC.call('users.updateUserProfile', profile, (error, result) => {
+      Meteor.call('users.updateUserProfile', profile, (error, result) => {
         if (error) {
           reject(error);
         } else {
