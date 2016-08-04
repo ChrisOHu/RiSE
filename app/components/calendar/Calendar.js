@@ -8,7 +8,7 @@ import {
   StyleSheet
 } from 'react-native'
 
-import { KeyboardAwareScrollView } from 'app/components/KeyboardAwareViews'
+import { KeyboardAwareScrollView } from 'app/common/KeyboardAwareViews'
 
 import Meteor, { createConainter } from 'react-native-meteor'
 

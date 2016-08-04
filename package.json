@@ -10,6 +10,7 @@
     "apsl-react-native-button": "^2.5.0",
     "color": "~0.11.1",
     "counterpart": "^0.17.2",
+    "events": "^1.1.1",
     "lodash": "~4.11.1",
     "react": "15.2.1",
     "react-native": "^0.29.0",

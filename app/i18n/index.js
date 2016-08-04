@@ -8,5 +8,3 @@ export function init() {
   counterpart.registerTranslations('en', En);
   counterpart.registerTranslations('zh', Zh);
 }
-
-export default counterpart

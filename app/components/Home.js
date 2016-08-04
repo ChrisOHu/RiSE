@@ -8,11 +8,8 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-import Pallete from 'Pallete'
-
 import { ScrollableTabView } from 'common/ScrollableTabView'
 
-import theme from "app/themes/default"
 import HomeTabBar from './HomeTabBar'
 import Events from './events/Events'
 import Calendar from './calendar/Calendar'
@@ -29,27 +26,25 @@ class HomePage extends Component {
 
   render() {
     return (
-      <Pallete.Container theme={theme} style={styles.container} >
-        <View style={styles.content} >
+      <View style={styles.content} >
 
-          <ScrollableTabView
-            initialPage={0}
-            tabBarPosition={"bottom"}
-            renderTabBar={() => <HomeTabBar />}
-            >
+        <ScrollableTabView
+          initialPage={0}
+          tabBarPosition={"bottom"}
+          renderTabBar={() => <HomeTabBar />}
+          >
 
-            <Events tabLabel="events" style={styles.tabView} />
+          <Events tabLabel="events" style={styles.tabView} />
 
-            <Calendar tabLabel="calendar" style={styles.tabView} />
+          <Calendar tabLabel="calendar" style={styles.tabView} />
 
-            <Chats tabLabel="chats" style={styles.tabView} />
+          <Chats tabLabel="chats" style={styles.tabView} />
 
-            <I tabLabel="I" style={styles.tabView} />
+          <I tabLabel="I" style={styles.tabView} />
 
-          </ScrollableTabView>
+        </ScrollableTabView>
 
-        </View>
-      </Pallete.Container>
+      </View>
     );
   }
 
@@ -58,13 +53,11 @@ class HomePage extends Component {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    backgroundColor: 'skyblue',
     paddingTop: 10
   },
   tabView: {
     flex: 1,
-    padding: 10,
-    backgroundColor: 'rgba(0,0,0,0.01)',
+    backgroundColor: 'white',
   },
   card: {
     borderWidth: 1,

@@ -86,8 +86,7 @@ class Events extends Component {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 1,
-    backgroundColor: 'green'
+    flex: 1
   },
   row: {
     padding: 10,

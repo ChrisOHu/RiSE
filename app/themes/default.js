@@ -13,9 +13,9 @@ export default {
 
     brandSecondary  : colors.mediumseagreen, //new style
 
-    inverseTextColor: colors.dark,
-    textColor       : colors.white,
-    foregroundColor : colors.white,
+    inverseTextColor: colors.white,
+    textColor       : colors.dark,
+    foregroundColor : colors.dark,
 
     rootFontSize    : 15,
     titleFontSize   : 18,
@@ -54,7 +54,7 @@ export default {
     borderWidth: 1,
 
     get inputColor () { return this.textColor; },
-    get inputColorPlaceholder () { return 'rgba(255, 255, 255, 1.0)'; },
+    get inputColorPlaceholder () { return 'rgba(0, 0, 0, 0.4)'; },
 
     inputBorderColor: "#fff",
     inputHeightBase: 40,

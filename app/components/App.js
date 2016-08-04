@@ -7,7 +7,7 @@ import {
   BackAndroid
 } from 'react-native'
 import CodePush from 'react-native-code-push'
-import { version } from './env.js'
+import { version } from '../env.js'
 import SideBar from './SideBar'
 import AppNavigator from './AppNavigator'
 import Pallete from 'Pallete'

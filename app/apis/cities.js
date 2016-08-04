@@ -1,5 +1,5 @@
 import _s from 'underscore.string'
-import t from 'app/i18n'
+import t from 'counterpart'
 import Meteor from 'react-native-meteor'
 
 export function getCitiesOfCountry(countryCode, query) {

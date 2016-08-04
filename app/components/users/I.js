@@ -18,7 +18,16 @@ class I extends Component {
   static propTypes = {
     i: T.object.isRequired
   }
-  static defaultProps = { }
+  static defaultProps = {
+    i: {
+      profile: {
+        name: 'Huaishun Hu',
+        avatar: "http://i1.ileehoo.com/upload/images/2013-06/2013062417230487630.jpg",
+        cover: "https://drscdn.500px.org/photo/166135077/m%3D1600_k%3D1_a%3D1/d33f821e6ca9d3efea5bd54c90f1208d",
+        status: "#4AM #Sunrise"
+      }
+    }
+  }
 
   constructor() {
     super(props)
@@ -56,7 +65,7 @@ class I extends Component {
         renderBackground={() => (
           <View>
             <Image source={{
-                uri: this.props.i.profile.cover
+                uri: this.props.i.profile.cover,
                 width: this.state.width,
                 height: this.state.parallaxHeaderHeight
               }} />
@@ -99,7 +108,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   stickySection: {
-    height: STICKY_HEADER_HEIGHT,
+    height: theme.toolbarHeight,
     width: 300,
     justifyContent: 'flex-end'
   },

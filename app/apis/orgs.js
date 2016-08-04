@@ -1,5 +1,5 @@
 import _s from 'underscore.string'
-import t from 'app/i18n'
+import t from 'counterpart'
 import Meteor from 'react-native-meteor'
 import { upload as ossUpload } from './clouds/aliyun/OSS'
 
