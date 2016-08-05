@@ -1,7 +1,11 @@
 
-import {Platform} from 'react-native';
+import {Platform} from 'react-native'
 
 import colors from './colors'
+
+const NAV_BAR_HEIGHT = 44;
+const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? 0 : 20;
+const NAV_HEIGHT = NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT;
 
 export default {
     brandPrimary    : colors.cornflowerblue,
@@ -34,9 +38,12 @@ export default {
     get borderRadiusLarge () { return this.rootFontSize* 3.8; },
 
     footerHeight: 55,
-    toolbarHeight: (Platform.OS === 'ios' ) ? 70 : 55,
+    statusBarHeight: STATUS_BAR_HEIGHT,
+    navBarHeight: NAV_BAR_HEIGHT,
+    toolbarHeight: NAV_HEIGHT,
     toolbarDefaultBg: colors.mediumseagreen,
     toolbarInverseBg: colors.lightblack,
+    toolbarBorderColor: '#E2E2E2',
 
 
 

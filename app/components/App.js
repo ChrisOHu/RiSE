@@ -9,23 +9,25 @@ import {
 import CodePush from 'react-native-code-push'
 import { version } from '../env.js'
 import SideBar from './SideBar'
-import AppNavigator from './AppNavigator'
+import Routes from './navigations/Routes'
 import Pallete from 'Pallete'
 import { init as initMeteor } from '../apis/Meteor'
 import { init as initI18N } from '../i18n'
 
-class App extends Component{
+class App extends Component {
+  static propTypes    = { }
+  static defaultProps = { }
+
   constructor(props) {
     super(props);
 
     this._backButtonHandlers = [];
 
-    this.state = {};
+    this.state = {
+      isLoggedIn: false
+    };
     this.refs = {};
   }
-
-  static propTypes    = { }
-  static defaultProps = { }
 
   addBackButtonListener(listener) {
     this._backButtonHandlers.push(listener);
@@ -65,9 +67,8 @@ class App extends Component{
       }
     }
 
-    const navigator = this.refs.appNavigator.getNavigator();
-    if (navigator && navigator.getCurrentRoutes().length > 1) {
-      navigator.pop();
+    if (this.refs.navigator.getCurrentRoutes().length > 1) {
+      this.refs.navigator.pop();
       return true;
     }
 
@@ -75,25 +76,18 @@ class App extends Component{
   }
 
   render() {
-    return (
-      <Pallete.Drawer
-        ref={(ref) => this.refs.drawer = ref}
-        type="overlay"
-        content={<SideBar />}
-        tapToClose={true}
-        acceptPan={false}
-        onClose={() => this.refs.drawer.close()}
-        openDrawerOffset={0.2}
-        panCloseMask={0.2}
-        negotiatePan={true} >
-
-        <AppNavigator />
-
-      </Pallete.Drawer>
-    );
+    if (this.state.isLoggedIn) {
+      Routes.navigator('home',
+        (ref) => { this.refs.navigator = ref }
+      )
+    } else {
+      Routes.navigator('login',
+        (ref) => { this.refs.navigator = ref }
+      )
+    }
   }
 
-};
+}
 
 
 export default App
