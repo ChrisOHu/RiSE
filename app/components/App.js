@@ -8,7 +8,6 @@ import {
 } from 'react-native'
 import CodePush from 'react-native-code-push'
 import { version } from '../env.js'
-import SideBar from './SideBar'
 import Routes from './navigations/Routes'
 import Pallete from 'Pallete'
 import { init as initMeteor } from '../apis/Meteor'
@@ -77,11 +76,11 @@ class App extends Component {
 
   render() {
     if (this.state.isLoggedIn) {
-      Routes.navigator('home',
+      return Routes.navigator('home',
         (ref) => { this.refs.navigator = ref }
       )
     } else {
-      Routes.navigator('login',
+      return Routes.navigator('login',
         (ref) => { this.refs.navigator = ref }
       )
     }

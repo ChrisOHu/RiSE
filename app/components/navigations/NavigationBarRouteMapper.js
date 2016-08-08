@@ -1,18 +1,24 @@
-
 import React from 'react'
 import {
 	TouchableOpacity,
 	Text,
   TextInput,
   View,
-  Platform
+	PixelRatio,
+	StyleSheet,
+  Platform,
+  Dimensions
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import theme from 'themes'
 
+import configs from './configs'
+
+const ScreenWidth = Dimensions.get('window').width;
+
 const NavigationBarRouteMapper = {
   LeftButton: function(route, navigator, index, navState) {
-    if (index === 0 || route.id === 'login') {
+    if (index === 0) {
       return null;
     }
     // else if(route.id == 'editprofile') {
@@ -25,35 +31,47 @@ const NavigationBarRouteMapper = {
     //   );
     // }
 
-    return (
-      <TouchableOpacity
-        onPress={() => navigator.pop()}
-        style={styles.navBarLeftButton}>
-        <Icon
-          name='ios-arrow-back'
-          size={30}
-          style={{marginTop: 8}}
-          color={theme.brandPrimary}
-        />
-      </TouchableOpacity>
-    );
+    switch (route.id) {
+      case 'home':
+      case 'search':
+      case 'login':
+      default:
+        return (
+          <TouchableOpacity
+            onPress={() => navigator.pop()}
+            style={styles.navBarLeftButton}>
+            <Icon
+              name='ios-arrow-back'
+              size={30}
+              style={{marginTop: 8}}
+              color={theme.brandPrimary}
+              />
+          </TouchableOpacity>
+        );
+    }
+
   },
 
   RightButton: function(route, navigator, index, navState) {
-    let rightButton;
     switch (route.id) {
+      case 'home':
+        return configs.home.RightButton(route, navigator, index, navState, styles);
+      case 'search':
+        return configs.search.RightButton(route, navigator, index, navState, styles);
+      case 'login':
+      default:
+        return null;
       // case 'editprofile':
-      //   rightButton = (
+      //   return rightButton = (
       //       <TouchableOpacity onPress={route.pressSave}>
       //         <Text style={[styles.navBarText, {marginRight: 10}]}>
       //           Save
       //         </Text>
       //       </TouchableOpacity>
       //   )
-      //   break;
       // case 'web':
       //   if (Platform.OS === 'ios') {
-      //     rightButton = (
+      //     return (
       //         <TouchableOpacity
       //           onPress={route.onShare}
       //           style={{width: 40, height: 40}}>
@@ -66,56 +84,18 @@ const NavigationBarRouteMapper = {
       //         </TouchableOpacity>
       //     )
       //   }
-      //   break;
-      default:
-        break;
     }
-
-    return rightButton;
   },
 
   Title: function(route, navigator, index, navState) {
     switch (route.id) {
       case 'login':
-        return;
+        return null;
       case 'home': {
-        return (
-          <TouchableOpacity
-            style={[styles.searchBar, {justifyContent: 'center'}]}
-            onPress={ () => navigator.push({id: 'search'}) }
-            >
-            <Icon
-              name={'ios-search'}
-              size={20}
-              style={styles.searchIcon}
-              color={theme.brandPrimary}
-            />
-            <Text style={[styles.textInput, {alignSelf: 'center', flex: 0}]}>
-              {'Search everything...' /*placeholder*/ }
-            </Text>
-          </TouchableOpacity>
-        )
+        return configs.home.Title(route, navigator, index, navState, styles);
       }
       case 'search': {
-        let fontSize = Platform.OS == 'android' ? 12 : 14;
-        return (
-          <View style={[styles.searchBar, {width: ScreenWidth - 40, marginLeft: 40}]}>
-            <Icon
-              name={'ios-search'}
-              size={20}
-              style={styles.searchIcon}
-              color={theme.brandPrimary}
-              />
-            <TextInput
-              style={[styles.textInput, {fontSize: fontSize}]}
-              placeholder={searchPlaceholder}
-              autoFocus={true}
-              onChangeText={route.sp.onChangeText}
-              onSubmitEditing={route.sp.onSubmitEditing}
-              clearButtonMode={'while-editing'}
-              />
-          </View>
-        )
+        return configs.search.Title(route, navigator, index, navState, styles);
       }
       default: {
         return (
@@ -132,5 +112,57 @@ const NavigationBarRouteMapper = {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  navBarText: {
+    fontSize: 16,
+    marginVertical: 10,
+  },
+  navBarTitleText: {
+    color: theme.brandPrimary,
+    fontWeight: '500',
+    marginVertical: 11,
+  },
+  navBarLeftButton: {
+    paddingLeft: 10,
+    width: 40,
+    height: 40,
+  },
+  navBarRightButton: {
+    paddingRight: 10
+  },
+  navBarButtonText: {
+    color: theme.brandPrimary
+  },
+  scene: {
+    flex: 1,
+    paddingTop: 20,
+    backgroundColor: '#EAEAEA'
+  },
+  searchBar: {
+    padding: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: ScreenWidth - 10,
+    height: 35,
+    borderWidth: 1,
+    borderColor: theme.toolbarBorderColor,
+    borderRadius: 4,
+    margin: 5,
+    backgroundColor: theme.inputBorderColor
+  },
+  searchIcon: {
+    marginLeft: 3,
+    marginRight: 3,
+    width: 20,
+    height: 20
+  },
+  textInput: {
+    fontSize: 14,
+    alignSelf: 'stretch',
+    flex: 1,
+    color: 'black'
+  }
+});
 
 export default NavigationBarRouteMapper

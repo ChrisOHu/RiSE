@@ -31,7 +31,7 @@ var Platform = require('Platform');
 var buildStyleInterpolator = require('buildStyleInterpolator');
 var merge = require('merge');
 
-var theme = require('themes')
+import theme from 'themes'
 
 var SCREEN_WIDTH = Dimensions.get('window').width;
 var NAV_BAR_HEIGHT = theme.navBarHeight;

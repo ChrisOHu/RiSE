@@ -28,7 +28,7 @@ function MergeRecursive(obj1, obj2) {
   return obj1;
 }
 
-var GiftedSpinner = require('../GiftedSpinner');
+import GiftedSpinner from '../GiftedSpinner'
 
 var GiftedListView = React.createClass({
 
@@ -252,7 +252,7 @@ var GiftedListView = React.createClass({
     if(this.props.distinctRows){
       mergedRows = this.props.distinctRows(mergedRows);
     }
-    
+
     this._updateRows(mergedRows, options);
   },
 
