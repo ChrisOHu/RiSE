@@ -28,7 +28,7 @@ function MergeRecursive(obj1, obj2) {
   return obj1;
 }
 
-import GiftedSpinner from '../GiftedSpinner');
+import GiftedSpinner from '../GiftedSpinner'
 
 var GiftedListView = React.createClass({
 
