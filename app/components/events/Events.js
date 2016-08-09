@@ -30,7 +30,13 @@ class Events extends Component {
 
   _onFetch(page = 1, callback, options) {
     setTimeout(() => {
-      var rows = ['row '+((page - 1) * 3 + 1), 'row '+((page - 1) * 3 + 2), 'row '+((page - 1) * 3 + 3)];
+      var rows = {
+        [`Section ${page}`]: [
+          'row '+((page - 1) * 3 + 1),
+          'row '+((page - 1) * 3 + 2),
+          'row '+((page - 1) * 3 + 3)
+        ]
+      };
       if (page === 3) {
         callback(rows, {
           allLoaded: true, // the end of the list is reached
@@ -42,26 +48,25 @@ class Events extends Component {
   }
 
   _onPress(rowData) {
-    console.log(rowData + ' pressed');
   }
 
   _renderRowView(rowData) {
-    console.debug(rowData);
     return (
       <TouchableHighlight
+        key={rowData}
         style={styles.row}
         underlayColor='#c8c7cc'
         onPress={() => this._onPress(rowData)}
       >
         {/*<EventCard theme={theme} />*/}
-        <Text>123</Text>
+        <Text>{rowData}</Text>
       </TouchableHighlight>
     );
   }
 
   _renderSectionHeaderView(sectionData, sectionID) {
     return (
-      <View style={styles.header}>
+      <View style={styles.header} key={sectionID}>
         <Text style={styles.headerTitle}>
           {sectionID}
         </Text>
@@ -76,6 +81,7 @@ class Events extends Component {
   _renderPaginationWaitingView(paginateCallback) {
     return (
       <TouchableHighlight
+        key="paginationWaitingView"
         underlayColor='#c8c7cc'
         onPress={paginateCallback}
         style={styles.paginationView}
@@ -92,7 +98,7 @@ class Events extends Component {
    */
   _renderPaginationFetchigView() {
     return (
-      <View style={styles.paginationView}>
+      <View key="paginationFetchigView" style={styles.paginationView}>
         <GiftedSpinner />
       </View>
     );
@@ -103,7 +109,7 @@ class Events extends Component {
    */
   _renderPaginationAllLoadedView() {
     return (
-      <View style={styles.paginationView}>
+      <View key="paginationAllLoadedView" style={styles.paginationView}>
         <Text style={styles.actionsLabel}>
           ~
         </Text>
@@ -137,9 +143,9 @@ class Events extends Component {
   /**
    * Render a separator between rows
    */
-  _renderSeparatorView() {
+  _renderSeparatorView(sectionID, rowID, adjacentRowHighlighted) {
     return (
-      <View style={styles.separator} />
+      <View key={`${sectionID}-${rowID}`} style={styles.separator} />
     );
   }
 

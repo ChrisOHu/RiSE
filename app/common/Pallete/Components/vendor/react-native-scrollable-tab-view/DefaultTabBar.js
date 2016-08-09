@@ -16,8 +16,6 @@ var background = require("./../../Themes/light").tabBgColor;
 var underlay = require("./../../Themes/light").darkenHeader;
 var textColor = require("./../../Themes/light").tabTextColor;
 
-console.log("textColor", textColor);
-
 var styles = StyleSheet.create({
   tab: {
     flex: 1,
