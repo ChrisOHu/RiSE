@@ -1,6 +1,8 @@
 package com.upmo;
 
 import com.facebook.react.ReactActivity;
+import com.rnfs.RNFSPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.reactnative.imagepicker.PickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.burlap.filetransfer.FileTransferPackage;
@@ -40,6 +42,8 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new RNFSPackage(),
+            new LinearGradientPackage(),
             new PickerPackage(),
             new VectorIconsPackage(),
             new FileTransferPackage(),

@@ -38,7 +38,7 @@ class Events extends Component {
       } else {
         callback(rows);
       }
-    }, 1000); // simulating network fetching
+    }, 200); // simulating network fetching
   }
 
   _onPress(rowData) {
