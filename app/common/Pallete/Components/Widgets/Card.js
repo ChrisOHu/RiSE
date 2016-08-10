@@ -1,56 +1,46 @@
 /* @flow */
 'use strict';
 
-import React from 'react';
-import {View} from 'react-native';
-import NativeBaseComponent from '../Base/NativeBaseComponent';
-import computeProps from '../../Utils/computeProps';
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
+import {
+  View,
+  StyleSheet
+} from 'react-native'
+import theme from 'themes'
 
-export default class CardNB extends NativeBaseComponent {
+export default class Card extends Component {
 
-    getInitialStyle() {
-        return {
-            card: {
-                flex: 1,
-                borderWidth: this.getTheme().borderWidth,
-                borderRadius: this.getTheme().borderRadiusBase,
-                borderColor: this.getTheme().listBorderColor,
-                flexWrap: 'wrap',
-                borderBottomWidth: 0,
-                backgroundColor: this.props.transparent? 'transparent' : this.getTheme().cardDefaultBg,
-                shadowColor: this.props.transparent ? undefined : '#000',
-                shadowOffset: this.props.transparent ? undefined : {width: 0, height: 2},
-                shadowOpacity: this.props.transparent ? undefined : 0.1,
-                shadowRadius: this.props.transparent ? undefined : 1.5,
-                elevation: this.props.transparent ? undefined : 1
-            }
-        }
+  getStyles() {
+    return {
+      root: {
+        flex: 1,
+        borderWidth: theme.borderWidth,
+        borderRadius: theme.borderRadiusBase,
+        borderColor: theme.listBorderColor,
+        flexWrap: 'wrap',
+        borderBottomWidth: 0,
+        backgroundColor: this.props.transparent? 'transparent' : theme.cardDefaultBg,
+        shadowColor: this.props.transparent ? undefined : '#000',
+        shadowOffset: this.props.transparent ? undefined : {width: 0, height: 2},
+        shadowOpacity: this.props.transparent ? undefined : 0.1,
+        shadowRadius: this.props.transparent ? undefined : 1.5,
+        elevation: this.props.transparent ? undefined : 1
+      }
     }
+  }
 
-    prepareRootProps() {
+  render() {
+    const { style, ...others } = this.props;
+    const rootStyles = this.getStyles();
 
-        var defaultProps = {
-            style: this.getInitialStyle().card
-        };
-        
-        return computeProps(this.props, defaultProps);
-
-    }
-
-    renderChildren() {
-        var childrenArray = React.Children.map(this.props.children, (child) => {
-            return child;
-        });
-
-        return childrenArray;
-    }
-
-    render() {
-        return(
-            <View {...this.prepareRootProps()} >
-                {this.renderChildren()}
-            </View>
-        );
-    }
+    return(
+      <View style={[rootStyles, style]} {...others} >
+        {this.props.children}
+      </View>
+    );
+  }
 
 }

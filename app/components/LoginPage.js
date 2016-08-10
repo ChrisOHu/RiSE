@@ -10,6 +10,7 @@ import Pallete from 'Pallete'
 
 import SmartScrollView from 'common/SmartScrollView'
 
+import theme from 'themes'
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'
 
@@ -31,7 +32,7 @@ class LoginPage extends Component {
   render() {
     return (
       <Pallete.Container>
-        <Pallete.Content style={styles.content} theme={theme}>
+        <Pallete.Content style={styles.content} theme={theme2}>
           <Image source={require('./assets/logo.png')} style={styles.logo} />
 
           <Pallete.View style={styles.form}>
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
 
 });
 
-const theme = {
+const theme2 = {
   brandPrimary : "#fff",
   brandInfo: "#5bc0de",
   brandSuccess: "#5cb85c",

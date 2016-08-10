@@ -1,15 +1,20 @@
 /* @flow */
 'use strict';
 
-import React from 'react';
-import {Image} from 'react-native';
-import NativeBaseComponent from '../Base/NativeBaseComponent';
-import computeProps from '../../Utils/computeProps';
-import Icon from './Icon';
-import Text from './Text';
-import View from './View';
-import Button from './Button';
-import Thumbnail from './Thumbnail';
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet
+} from 'react-native'
+
+import theme from 'themes'
+import Icon from 'react-native-vector-icons/Ionicons'
+import Button from './Button'
 
 var keyIndex = 0;
 
@@ -180,33 +185,33 @@ export default class CardItemNB extends NativeBaseComponent {
             defaultProps = {
                 small: true,
                 style: this.getInitialStyle().itemButton,
-                key: keyIndex++ 
+                key: keyIndex++
             }
         }
         else if(child.type == Text) {
             if ((this.props.header) || (this.props.footer)) {
                 defaultProps = {
                     style: this.getInitialStyle().dividerItemText,
-                    key: keyIndex++ 
+                    key: keyIndex++
                 }
             }
             else {
                 if(child.props.note && this.thumbnailPresent()) {
                     defaultProps = {
                         style: this.getInitialStyle().itemSubNote,
-                        key: keyIndex++ 
+                        key: keyIndex++
                     }
                 }
                 else if(child.props.note) {
                     defaultProps = {
                         style: this.getInitialStyle().itemNote,
-                        key: keyIndex++ 
+                        key: keyIndex++
                     }
                 }
                 else {
                     defaultProps = {
                         style: this.getInitialStyle().itemText,
-                        key: keyIndex++ 
+                        key: keyIndex++
                     }
                 }
             }
@@ -214,25 +219,25 @@ export default class CardItemNB extends NativeBaseComponent {
         else if(child.type == Icon) {
             defaultProps = {
                 style: this.getInitialStyle().itemIcon,
-                key: keyIndex++ 
+                key: keyIndex++
             }
         }
         else if(child.type == Thumbnail) {
             defaultProps = {
                 style: this.getInitialStyle().thumbnail,
-                key: keyIndex++ 
+                key: keyIndex++
             }
         }
         else if(child.type == Image ) {
             defaultProps = {
                 style: this.getInitialStyle().fullImage,
-                key: keyIndex++ 
+                key: keyIndex++
             }
         }
         else {
             defaultProps = {
                 foregroundColor: this.getContextForegroundColor(),
-                key: keyIndex++ 
+                key: keyIndex++
             }
         }
 
@@ -267,7 +272,7 @@ export default class CardItemNB extends NativeBaseComponent {
         var newChildren = [];
 
         if(!this.thumbnailPresent() && !this.iconPresent()) {
-            
+
             newChildren = React.Children.map(this.props.children, (child) => {
                 return React.cloneElement(child, this.getChildProps(child));
             });

@@ -11,6 +11,7 @@ import {
 import { ScrollableTabView } from 'common/ScrollableTabView'
 
 import Routes from './navigations/Routes'
+import theme from 'themes'
 import HomeTabBar from './HomeTabBar'
 import Events from './events/Events'
 import Calendar from './calendar/Calendar'
@@ -54,7 +55,7 @@ class HomePage extends Component {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    paddingTop: 10
+    paddingTop: theme.toolbarHeight
   },
   tabView: {
     flex: 1,
