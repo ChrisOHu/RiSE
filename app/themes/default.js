@@ -70,6 +70,10 @@ export default {
     inputPaddingLeft: 5,
     get inputPaddingLeftIcon () { return this.inputPaddingLeft* 8; },
 
+    checkboxBgColor: '#039BE5',
+    checkboxTickColor: '#fff',
+    checkboxSize: 23,
+
     dropdownBg: colors.black,
     dropdownLinkColor: "#414142",
 

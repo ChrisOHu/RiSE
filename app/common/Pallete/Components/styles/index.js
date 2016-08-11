@@ -92,5 +92,5 @@ export default {
       flexDirection: 'row',
       marginRight: -14
     }
-  },
+  }
 }
