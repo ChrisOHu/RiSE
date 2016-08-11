@@ -1,66 +1,22 @@
 /* @flow */
 'use strict';
 
-import Drawer from './Components/vendor/react-native-drawer';
-import Header from './Components/Widgets/Header';
-import Footer from './Components/Widgets/Footer';
-import Title from './Components/Widgets/Title';
-import Container from './Components/Widgets/Container';
-import Content from './Components/Widgets/Content';
-import Button from './Components/Widgets/Button';
-import Text from './Components/Widgets/Text';
-import Switch from './Components/Widgets/Switch';
-import Picker from './Components/Widgets/Picker';
-import List from './Components/Widgets/List';
-import ListItem from './Components/Widgets/ListItem';
-import CardItem from './Components/Widgets/CardItem';
-import H1 from './Components/Widgets/H1';
-import H2 from './Components/Widgets/H2';
-import H3 from './Components/Widgets/H3';
-import View from './Components/Widgets/View';
-import Input from './Components/Widgets/Input';
-import Textarea from './Components/Widgets/Textarea';
-import InputGroup from './Components/Widgets/InputGroup';
-import Icon from './Components/Widgets/Icon';
-import Thumbnail from './Components/Widgets/Thumbnail';
-import Card from './Components/Widgets/Card';
-import Badge from './Components/Widgets/Badge';
-// import Spinner from './Components/Widgets/Spinner';
-// import ProgressBar from './Components/Widgets/ProgressBar';
-import { Col, Row, Grid } from "react-native-easy-grid";
-import ScrollableTabView from './Components/Widgets/Tabs';
+import Badge from './Components/Widgets/Badge'
+import Button from './Components/Widgets/Button'
+import Checkbox from './Components/Widgets/Checkbox'
+import Input from './Components/Widgets/Input'
+import ProgressBar from './Components/Widgets/ProgressBar'
+import Spinner from './Components/Widgets/Spinner'
+import Textarea from './Components/Widgets/Textarea'
 
 const Pallete = {
-	Header,
-	Footer,
-	Title,
-	Container,
-	Content,
-	Button,
-	Text,
-	Switch,
-	Picker,
-	List,
-	ListItem,
-	CardItem,
-	H1,
-	H2,
-	H3,
-	View,
-	Row,
-	Col,
-	Grid,
-	InputGroup,
-	Input,
-	Textarea,
-	Icon,
-	Thumbnail,
-	Card,
 	Badge,
-	// Spinner,
-	// ProgressBar,
-	Drawer,
-	ScrollableTabView
+  Button,
+  Checkbox,
+  Input,
+	ProgressBar,
+	Spinner,
+  Textarea
 }
 
 export default Pallete

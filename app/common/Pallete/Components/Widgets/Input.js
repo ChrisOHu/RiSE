@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Input extends Component {
   static propTypes = {
+    style: T.object,
     borderType: T.oneOf(['underline', 'bordered', 'rounded']),
     iconLeft: T.bool,
     textInput: T.object,
@@ -25,13 +26,15 @@ export default class Input extends Component {
 
   render() {
     const {
+      style,
       textInput,
       icon,
       iconLeft,
       borderType
     } = this.props;
 
-    const rootStyles = [ styles.root, styles[borderType] ];
+    const rootStyles = [ styles.root, styles[borderType], style];
+    textInput = Object.assign({}, this.defaultProps.textInput, textInput);
 
     if (icon) {
       if (iconLeft) {
