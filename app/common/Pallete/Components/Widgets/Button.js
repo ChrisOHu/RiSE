@@ -125,8 +125,8 @@ export default class Button extends Component {
     } = this.props;
 
     const rootStyles = this.getRootStyles();
-    const textStyles = this.props.text ? this.getTextStyles() : null;
-    const iconStyles = this.props.icon ? this.getIconStyles() : null;
+    const textStyles = text ? this.getTextStyles() : null;
+    const iconStyles = icon ? this.getIconStyles() : null;
 
     if (text && icon) {
       const { name, style, ...others } = icon;

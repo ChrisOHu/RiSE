@@ -6,10 +6,10 @@ import ProgressBarAndroid from "ProgressBarAndroid"
 import { ActivityIndicatorIOS } from 'react-native';
 
 export default class Spinner extends Component {
+  static propTypes = {
+    inverse: T.bool
+  }
   render() {
-    static propTypes = {
-      inverse: T.bool
-    }
     const {
       style,
       size,

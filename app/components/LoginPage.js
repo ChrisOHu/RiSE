@@ -33,58 +33,55 @@ class LoginPage extends Component {
   render() {
     return (
       <KeyboardAwareScrollView
-        contentContainerStyle={{
-          padding: theme.contentPadding || 0
-        }}
+        contentContainerStyle={{}}
         style={styles.root} >
 
         <Image source={require('./assets/logo.png')} style={styles.logo} />
 
         <View style={styles.form} >
           <Pallete.Input style={{marginBottom: 20}}
-            icon={name: "ios-person"}
-            textInput={placeholder: "Email"}
+            icon={{name: "ios-person"}}
+            textInput={{placeholder: "Email"}}
             />
           <Pallete.Input style={{marginBottom: 10}}
-            icon={name: "ios-unlock-outline"}
-            textInput={placeholder: "Password", secureTextEntry: true}
+            icon={{name: "ios-unlock-outline"}}
+            textInput={{placeholder: "Password", secureTextEntry: true}}
             />
 
           <Pallete.Input style={{marginBottom: 10}}
-            icon={name: "ios-unlock-outline"}
-            textInput={placeholder: "Password", secureTextEntry: true}
+            icon={{name: "ios-unlock-outline"}}
+            textInput={{placeholder: "Password", secureTextEntry: true}}
             />
 
-          <Pallete.Button transparent
-            style={{
-              alignSelf: 'flex-end',
-              marginBottom: (Platform.OS === 'ios' ) ? 10 : 0,
-              marginTop: (Platform.OS === 'ios' ) ? -10 : 0
-            }} >
-            Forgot Password
-          </Pallete.Button>
           <Pallete.Button rounded block
             style={{ marginBottom: 10 }}
-            onPress={() => this.props.navigator.replace({id: 'home'})} >
-            Login
-          </Pallete.Button>
-          <Pallete.Button transparent
-            style={{alignSelf: 'center'}}
-            onPress={() => this.props.navigator.replace({id: 'home'})} >
-            Sign Up Here
-          </Pallete.Button>
+            onPress={() => this.props.navigator.replace({id: 'home'})}
+            text={"Login"}
+            />
+          <View style={{
+              flex: 1, flexDirection: 'row', backgroundColor: 'black'
+            }} >
+            <Pallete.Button transparent bordered
+              style={{alignSelf: 'flex-start'}}
+              text={"Forgot Password ?"}
+              />
+            <Pallete.Button transparent bordered
+              style={{alignSelf: 'flex-end'}}
+              onPress={() => this.props.navigator.replace({id: 'home'})}
+              text={"Sign Up"}
+              />
+          </View>
         </View>
       </KeyboardAwareScrollView>
     )
   }
-
 
 }
 
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: '#00c497'
+    backgroundColor: 'skyblue'
   },
   logo: {
     width: null,

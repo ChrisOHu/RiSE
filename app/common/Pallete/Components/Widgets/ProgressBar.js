@@ -6,10 +6,10 @@ import ProgressBarAndroid from "ProgressBarAndroid"
 import { ProgressViewIOS } from 'react-native';
 
 export default class ProgressBar extends Component {
+  static propTypes = {
+    inverse: T.bool
+  }
   render() {
-    static propTypes = {
-      inverse: T.bool
-    }
     const {
       style,
       indeterminate,

@@ -5,6 +5,7 @@ import {
 	StyleSheet,
   BackAndroid
 } from 'react-native'
+import NavigationBar from './NavigationBar'
 import NavigationBarStyle from './NavigationBarStyle'
 import NavigationBarRouteMapper from './NavigationBarRouteMapper'
 import LoginPage from '../LoginPage'
@@ -16,7 +17,7 @@ const Routes = {
 		return (
 			<Navigator
         ref={refCallback}
-				initialRoute={{id: initialRoute}}
+				initialRoute={initialRoute}
 				renderScene={this.renderScene}
         configureScene={(route) => {
           if (route.sceneConfig) {
@@ -25,7 +26,7 @@ const Routes = {
           return Navigator.SceneConfigs.FloatFromRight;
         }}
 				navigationBar={
-					<Navigator.NavigationBar
+					<NavigationBar
 						routeMapper={NavigationBarRouteMapper}
 						style={styles.navBar}
             navigationStyles={NavigationBarStyle}

@@ -25,7 +25,7 @@ export default class Input extends Component {
   }
 
   render() {
-    const {
+    let {
       style,
       textInput,
       icon,
@@ -34,7 +34,7 @@ export default class Input extends Component {
     } = this.props;
 
     const rootStyles = [ styles.root, styles[borderType], style];
-    textInput = Object.assign({}, this.defaultProps.textInput, textInput);
+    textInput = Object.assign({}, Input.defaultProps.textInput, textInput);
 
     if (icon) {
       if (iconLeft) {
@@ -73,7 +73,7 @@ export default class Input extends Component {
 
 }
 
-const styles = StyleSheet.crate({
+const styles = StyleSheet.create({
 	root: {
 		height: theme.inputHeightBase,
 		backgroundColor: 'transparent',
