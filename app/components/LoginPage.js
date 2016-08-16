@@ -59,7 +59,7 @@ class LoginPage extends Component {
 
           <Pallete.Button rounded block
             style={{ marginBottom: 10 }}
-            onPress={() => this.props.navigator.replace({id: 'home'})}
+            onPress={() => this.props.navigator.replace({id: 'home', hideNavigationBar: true})}
             text={"Login"}
             />
           <View style={{

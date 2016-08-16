@@ -1,7 +1,7 @@
-import HomeConfigs from './HomePage.config'
-import SearchConfigs from './SearchPage.config'
+import eventsConfig from './events.config'
+import searchConfig from './search.config'
 
 export default {
-  home: HomeConfigs,
-  search: SearchConfigs
+  events: eventsConfig,
+  search: searchConfig
 }

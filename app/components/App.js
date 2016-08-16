@@ -76,7 +76,7 @@ class App extends Component {
 
   render() {
     if (this.state.isLoggedIn) {
-      return Routes.navigator({id: 'home'},
+      return Routes.navigator({id: 'home', hideNavigationBar: true},
         (ref) => { this.refs.navigator = ref }
       )
     } else {

@@ -32,7 +32,7 @@ const NavigationBarRouteMapper = {
     // }
 
     switch (route.id) {
-      case 'home':
+      case 'events':
       case 'search':
       case 'login':
       default:
@@ -54,8 +54,8 @@ const NavigationBarRouteMapper = {
 
   RightButton: function(route, navigator, index, navState) {
     switch (route.id) {
-      case 'home':
-        return configs.home.RightButton(route, navigator, index, navState, styles);
+      case 'events':
+        return configs.events.RightButton(route, navigator, index, navState, styles);
       case 'search':
         return configs.search.RightButton(route, navigator, index, navState, styles);
       case 'login':
@@ -91,8 +91,8 @@ const NavigationBarRouteMapper = {
     switch (route.id) {
       case 'login':
         return null;
-      case 'home': {
-        return configs.home.Title(route, navigator, index, navState, styles);
+      case 'events': {
+        return configs.events.Title(route, navigator, index, navState, styles);
       }
       case 'search': {
         return configs.search.Title(route, navigator, index, navState, styles);

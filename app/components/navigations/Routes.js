@@ -10,6 +10,11 @@ import NavigationBarStyle from './NavigationBarStyle'
 import NavigationBarRouteMapper from './NavigationBarRouteMapper'
 import LoginPage from '../LoginPage'
 import HomePage from '../HomePage'
+import Events from '../events/Events'
+import Calendar from '../calendar/Calendar'
+import Explore from '../explore/Explore'
+import Conversations from '../conversations/Conversations'
+import I from '../users/I'
 import theme from 'themes'
 
 const Routes = {
@@ -45,13 +50,22 @@ const Routes = {
       return false;
     });
 
+    const props = route.props;
 		switch (route.id) {
       case 'login':
-        return <LoginPage navigator={navigator} />
+        return <LoginPage navigator={navigator} {...props} />
       // case 'search':
-        // return <SearchComponent navigator={navigator} route={route}/>;
+      //   return <SearchComponent navigator={navigator} route={route}/>;
       case 'home':
-        return <HomePage navigator={navigator} />
+        return <HomePage navigator={navigator} {...props} />
+      case 'events':
+        return <Events navigator={navigator} {...props} />
+      case 'explore':
+        return <Explore navigator={navigator} {...props} />
+      case 'conversations':
+        return <Conversations navigator={navigator} {...props} />
+      case 'I':
+        return <I navigator={navigator} {...props} />
       default:
         throw new Error(`unknown route id: ${route.id}`)
         return null

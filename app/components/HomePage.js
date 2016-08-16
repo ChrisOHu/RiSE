@@ -13,10 +13,6 @@ import { ScrollableTabView } from 'common/ScrollableTabView'
 import Routes from './navigations/Routes'
 import theme from 'themes'
 import HomeTabBar from './HomeTabBar'
-import Events from './events/Events'
-import Calendar from './calendar/Calendar'
-import Chats from './chats/Chats'
-import I from './users/I'
 
 class HomePage extends Component {
   constructor(props) {
@@ -36,13 +32,10 @@ class HomePage extends Component {
           renderTabBar={() => <HomeTabBar />}
           >
 
-          <Events tabLabel="events" style={styles.tabView} navigator={this.props.navigator} />
-
-          <Calendar tabLabel="calendar" style={styles.tabView} navigator={this.props.navigator} />
-
-          <Chats tabLabel="chats" style={styles.tabView} navigator={this.props.navigator} />
-
-          <I tabLabel="I" style={styles.tabView} navigator={this.props.navigator} />
+          {Routes.navigator({id: 'events',        props: {tabLabel: "Events"}})}
+          {Routes.navigator({id: 'explore',       props: {tabLabel: "Explore"}})}
+          {Routes.navigator({id: 'conversations', props: {tabLabel: "conversations"}})}
+          {Routes.navigator({id: 'I',             props: {tabLabel: "I"}})}
 
         </ScrollableTabView>
 
