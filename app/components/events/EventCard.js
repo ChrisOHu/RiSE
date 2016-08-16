@@ -7,47 +7,101 @@ import React, {
   PropTypes as T
 } from 'react'
 import {
+  View,
   Image,
+  Dimensions,
   StyleSheet
 } from 'react-native'
 
+import t from 'counterpart'
+
 import Pallete from 'Pallete'
 
-import theme from 'app/themes/default'
+import theme from 'themes'
+
+const window = Dimensions.get('window')
 
 class EventCard extends Component {
   static propTypes = {
-    theme: T.object.isRequired,
-    event: T.object
+    event: T.object.isRequired
   }
-  static defaultProps = { }
+  static defaultProps = {
+    event: {
+      name: '--',
+      createdAt: '--',
+      creator: {},
+      time: '--',
+      descriptions: '--',
+      address: '--',
+      poster: '',
+      tags: [],
+      attenders: [],
+      comments: [],
+      attendersCount: 0,
+      commentsCount: 0
+    }
+  }
 
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { theme, event } = this.props.event;
+    const { event } = this.props;
     return (
-      <Pallete.Card theme={theme}>
+      <View style={styles.root}>
 
-        <Pallete.CardItem>
-          <Pallete.Thumbnail source={require(event.club.avatar)} />
-          <Pallete.Text>{event.club.name}</Pallete.Text>
-        </Pallete.CardItem>
+        <View style={styles.header} >
+          <Image style={styles.creatorAvatar}
+            source={{uri: this.event.creator.avatar}}
+            resizeMode="contain"
+            />
+          <View style={styles.creatorMeta} >
+            <Text>{event.owner.name}</Text>
+            <Text>{event.createdAt}</Text>
+          </View>
+        </View>
+        <Image style={styles.poster}
+          source={{uri: event.poster}}
+          />
 
-        <Pallete.CardItem>
-          <Image style={{ resizeMode: 'cover' }} source={require(event.poster)} />
-        </Pallete.CardItem>
+        <View>
+          <Text>{event.name}</Text>
+          <Text>{event.price}</Text>
 
-        <Pallete.CardItem>
-          <Icon name={'ios-musical-notes'} style={{color : '#ED4A6A'}} />
-          <Text>Listen now</Text>
-        </Pallete.CardItem>
+          <Text>{event.slogan}</Text>
+          <Text>{event.address}</Text>
+        </View>
 
-      </Pallete.Card>
+        <View style={styles.line} />
+      </View>
     )
   }
 }
 
 export default EventCard
+
+const styles = StyleSheet.create({
+  root: {
+    marginBottom: 10
+  },
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    padding: 5
+  },
+  creatorAvatar: {
+    borderRadius: 15,
+    width: 30,
+    height: 30,
+    resizeMode: 'contain'
+  },
+  creatorMeta: {
+    flex: 1
+  },
+  poster: {
+    width: window.width,
+    height: 0.75 * window.width
+  },
+  line: Pallete.styles.horizontalLine
+})

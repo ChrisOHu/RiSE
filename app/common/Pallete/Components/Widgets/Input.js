@@ -1,8 +1,16 @@
 /* @flow */
 'use strict';
 
-import React, { Component, PropTypes as T } from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
+import {
+  View,
+  TextInput,
+  PixelRatio,
+  StyleSheet
+} from 'react-native'
 import theme from 'themes'
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -12,7 +20,9 @@ export default class Input extends Component {
     borderType: T.oneOf(['underline', 'bordered', 'rounded']),
     iconLeft: T.bool,
     textInput: T.object,
-    icon: T.object
+    textInputStyle: T.object,
+    icon: T.object,
+    iconStyle: T.object
   }
   static defaultProps = {
     borderType: 'underline',
@@ -28,7 +38,9 @@ export default class Input extends Component {
     let {
       style,
       textInput,
+      textInputStyle,
       icon,
+      iconStyle,
       iconLeft,
       borderType
     } = this.props;
@@ -43,7 +55,7 @@ export default class Input extends Component {
             <Icon style={[ styles.icon ]}
               {...icon}
               />
-            <TextInput style={[ styles.textInput ]}
+            <TextInput style={[ styles.textInput, textInputStyle ]}
               {...textInput}
               />
           </View>
@@ -51,7 +63,7 @@ export default class Input extends Component {
       } else {
         return (
           <View style={rootStyles}>
-            <TextInput style={[ styles.textInput ]}
+            <TextInput style={[ styles.textInput, textInputStyle ]}
               {...textInput}
               />
             <Icon style={[ styles.icon ]}
@@ -63,7 +75,7 @@ export default class Input extends Component {
     } else {
       return (
         <View style={rootStyles}>
-          <TextInput style={[ styles.textInput ]}
+          <TextInput style={[ styles.textInput, textInputStyle ]}
             {...textInput}
             />
         </View>
@@ -79,11 +91,11 @@ const styles = StyleSheet.create({
 		backgroundColor: 'transparent',
 		flex: 1,
 		flexDirection: 'row',
-		borderColor: theme.foregroundColor,
+		borderColor: 'black',
 		paddingRight: 5
 	},
   icon: {
-		color: theme.foregroundColor,
+		color: theme.textColor,
 		fontSize: 27,
 		alignSelf: 'center',
 		lineHeight: undefined,
@@ -93,7 +105,7 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     height: theme.inputHeightBase,
-    color: theme.foregroundColor,
+    color: theme.textColor,
     paddingLeft: 5,
     paddingRight: 5
   },

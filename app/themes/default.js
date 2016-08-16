@@ -1,5 +1,8 @@
 
-import {Platform} from 'react-native'
+import {
+  Platform,
+  PixelRatio
+} from 'react-native'
 
 import colors from './colors'
 
@@ -8,7 +11,7 @@ const STATUS_BAR_HEIGHT = Platform.OS === 'android' ? 0 : 20;
 const NAV_HEIGHT = NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT;
 
 export default {
-    brandPrimary    : colors.cornflowerblue,
+    brandPrimary    : colors.tomato,
     brandInfo       : colors.royalblue,
     brandSuccess    : colors.springgreen,
     brandDanger     : colors.red,
@@ -59,10 +62,12 @@ export default {
     get btnWarningBg () { return this.brandWarning; },
     get btnWarningColor () { return this.inverseTextColor; },
 
-    borderWidth: 1,
+    borderWidth: 1 / PixelRatio.get(),
+    lineWidth: 1 / PixelRatio.get(),
+    lineColor: 'rgba(0, 0, 0, 1)',
 
     get inputColor () { return this.textColor; },
-    get inputColorPlaceholder () { return 'rgba(255, 255, 255, 1.0)'; },
+    get inputColorPlaceholder () { return colors.grey; },
 
     inputBorderColor: "#fff",
     inputHeightBase: 40,

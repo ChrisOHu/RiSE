@@ -15,6 +15,12 @@ import theme from 'themes'
 
 export default class Button extends Component {
   static propTypes = {
+    style: T.object,
+    iconLeft: T.bool,
+    icon: T.object,
+    text: T.string,
+    onPress: T.func,
+
     transparent: T.bool,
     primary: T.bool,
     success: T.bool,
@@ -26,11 +32,7 @@ export default class Button extends Component {
     bordered: T.bool,
     large: T.bool,
     small: T.bool,
-    block: T.bool,
-
-    iconLeft: T.bool,
-    icon: T.object,
-    text: T.string
+    block: T.bool
   }
   static defaultProps = {
     iconLeft: true
@@ -121,45 +123,37 @@ export default class Button extends Component {
     const {
       text,
       icon,
-      iconLeft
+      iconLeft,
+      onPress
     } = this.props;
 
-    const rootStyles = this.getRootStyles();
+    const rootStyles = [this.getRootStyles(), this.props.style];
     const textStyles = text ? this.getTextStyles() : null;
     const iconStyles = icon ? this.getIconStyles() : null;
+
+    let children = [];
 
     if (text && icon) {
       const { name, style, ...others } = icon;
 
       if (iconLeft) {
-        return (
-          <TouchableOpacity style={rootStyles} >
-            <Icon name={name} style={[iconStyles, style]} {...others} />
-            <Text style={textStyles} >{text}</Text>
-          </TouchableOpacity>
-        )
+        children.push(<Icon key="icon" name={name} style={[iconStyles, style]} {...others} />)
+        children.push(<Text key="text" style={textStyles} >{text}</Text>)
       } else {
-        return (
-          <TouchableOpacity style={rootStyles} >
-            <Text style={textStyles} >{text}</Text>
-            <Icon name={name} style={[iconStyles, style]} {...others} />
-          </TouchableOpacity>
-        )
+        children.push(<Text key="text" style={textStyles} >{text}</Text>)
+        children.push(<Icon key="icon" name={name} style={[iconStyles, style]} {...others} />)
       }
     } else if (icon) {
       const { name, style, ...others } = icon;
-
-      return (
-        <TouchableOpacity style={rootStyles} >
-          <Icon name={name} style={[iconStyles, style]} {...others} />
-        </TouchableOpacity>
-      )
+      children.push(<Icon key="icon" name={name} style={[iconStyles, style]} {...others} />)
     } else {
-      return (
-        <TouchableOpacity style={rootStyles} >
-          <Text style={textStyles} >{text}</Text>
-        </TouchableOpacity>
-      )
+      children.push(<Text key="text" style={textStyles} >{text}</Text>)
     }
+
+    return (
+      <TouchableOpacity style={rootStyles} onPress={onPress} >
+        {children}
+      </TouchableOpacity>
+    )
   }
 }

@@ -332,4 +332,4 @@ ParallaxScrollView.defaultProps = {
   contentContainerStyle: null
 };
 
-module.exports = ParallaxScrollView;
+export default ParallaxScrollView

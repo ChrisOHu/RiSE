@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import {
   View,
+  Text,
   Image,
+  TouchableOpacity,
+  StyleSheet,
   Platform,
-  Dimensions,
-  StyleSheet
+  Dimensions
 } from 'react-native'
 
 import Pallete from 'Pallete'
 
-import { KeyboardAwareScrollView } from 'common/KeyboardAwareViews'
+import ParallaxScrollView from 'common/ParallaxScrollView'
 
 import theme from 'themes'
 // import Button from './components/Button'
@@ -32,14 +34,16 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <KeyboardAwareScrollView
-        contentContainerStyle={{}}
+      <ParallaxScrollView
+        renderBackground={() =>
+          <Image source={require('./assets/logo.png')} style={styles.logo} />
+        }
+        parallaxHeaderHeight={300}
+        contentContainerStyle={styles.root}
         style={styles.root} >
 
-        <Image source={require('./assets/logo.png')} style={styles.logo} />
-
         <View style={styles.form} >
-          <Pallete.Input style={{marginBottom: 20}}
+          <Pallete.Input style={{marginBottom: 10}}
             icon={{name: "ios-person"}}
             textInput={{placeholder: "Email"}}
             />
@@ -48,7 +52,7 @@ class LoginPage extends Component {
             textInput={{placeholder: "Password", secureTextEntry: true}}
             />
 
-          <Pallete.Input style={{marginBottom: 10}}
+          <Pallete.Input style={{marginBottom: 20}}
             icon={{name: "ios-unlock-outline"}}
             textInput={{placeholder: "Password", secureTextEntry: true}}
             />
@@ -59,20 +63,27 @@ class LoginPage extends Component {
             text={"Login"}
             />
           <View style={{
-              flex: 1, flexDirection: 'row', backgroundColor: 'black'
+              flex: 1,
+              flexDirection: 'row',
+              flexWrap: 'nowrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingLeft: 20,
+              paddingRight: 20
             }} >
-            <Pallete.Button transparent bordered
-              style={{alignSelf: 'flex-start'}}
-              text={"Forgot Password ?"}
-              />
-            <Pallete.Button transparent bordered
-              style={{alignSelf: 'flex-end'}}
-              onPress={() => this.props.navigator.replace({id: 'home'})}
-              text={"Sign Up"}
-              />
+            <TouchableOpacity style={{marginRight: 5}} >
+              <Text style={{fontSize: 12}}>
+                Forgot Password ?
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{}} >
+              <Text style={{fontSize: 12}}>
+                Sign Up
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
-      </KeyboardAwareScrollView>
+      </ParallaxScrollView>
     )
   }
 
@@ -81,25 +92,21 @@ class LoginPage extends Component {
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: 'skyblue'
+    backgroundColor: 'white'
   },
   logo: {
-    width: null,
+    width: Dimensions.get('window').width,
     height: 300,
-    resizeMode: 'contain',
-    backgroundColor: 'skyblue'
+    resizeMode: 'contain'
   },
   form: {
     flex: 1,
-    width: null,
-    height: null,
     marginTop: 0,
     paddingTop: 20,
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 70
-  },
-
+  }
 });
 
 export default LoginPage

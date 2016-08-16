@@ -1,4 +1,7 @@
-import { Platform } from 'react-native'
+import {
+  Platform,
+  PixelRatio
+} from 'react-native'
 import theme from 'themes'
 
 export default {
@@ -30,6 +33,10 @@ export default {
   icon: {
     fontSize: theme.iconFontSize,
     color: theme.foregroundColor
+  },
+  horizontalLine: {
+    height: theme.lineWidth,
+    backgroundColor: theme.lineColor
   },
   /** Header */
   header: {
