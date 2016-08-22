@@ -32,10 +32,10 @@ class HomePage extends Component {
           renderTabBar={() => <HomeTabBar />}
           >
 
-          {Routes.navigator({id: 'events',        props: {tabLabel: "Events"}})}
-          {Routes.navigator({id: 'explore',       props: {tabLabel: "Explore"}})}
-          {Routes.navigator({id: 'conversations', props: {tabLabel: "conversations"}})}
-          {Routes.navigator({id: 'I',             props: {tabLabel: "I"}})}
+          {Routes.navigator({id: 'events'})}
+          {Routes.navigator({id: 'explore'})}
+          {Routes.navigator({id: 'conversations'})}
+          {Routes.navigator({id: 'I'})}
 
         </ScrollableTabView>
 
@@ -47,8 +47,7 @@ class HomePage extends Component {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 1,
-    paddingTop: theme.toolbarHeight
+    flex: 1
   },
   tabView: {
     flex: 1,

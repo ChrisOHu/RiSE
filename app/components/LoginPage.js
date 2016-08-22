@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, {
+  Component,
+  PropTypes as T
+} from 'react'
 import {
   View,
   Text,
@@ -18,6 +21,9 @@ import theme from 'themes'
 // import AutoComplete from './components/AutoComplete'
 
 class LoginPage extends Component {
+  static propTypes = {
+    onLoggedIn: T.func
+  }
   constructor(props) {
     super(props)
 
@@ -59,7 +65,7 @@ class LoginPage extends Component {
 
           <Pallete.Button rounded block
             style={{ marginBottom: 10 }}
-            onPress={() => this.props.navigator.replace({id: 'home', hideNavigationBar: true})}
+            onPress={() => this.props.onLoggedIn()}
             text={"Login"}
             />
           <View style={{

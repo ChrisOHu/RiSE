@@ -1,6 +1,7 @@
 package com.upmo;
 
 import com.facebook.react.ReactActivity;
+import com.react.rnspinkit.RNSpinkitPackage;
 import com.rnfs.RNFSPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.reactnative.imagepicker.PickerPackage;
@@ -42,6 +43,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new RNSpinkitPackage(),
             new RNFSPackage(),
             new LinearGradientPackage(),
             new PickerPackage(),

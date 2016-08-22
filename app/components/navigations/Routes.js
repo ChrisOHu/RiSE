@@ -42,30 +42,29 @@ const Routes = {
 	},
 
 	renderScene(route, navigator) {
-    BackAndroid.addEventListener('hardwareBackPress', () => {
-      if (navigator && navigator.getCurrentRoutes().length > 1) {
-        navigator.pop();
-        return true;
-      }
-      return false;
-    });
+   // BackAndroid.addEventListener('hardwareBackPress', () => {
+   //   if (navigator && navigator.getCurrentRoutes().length > 1) {
+   //     navigator.pop();
+   //     return true;
+   //   }
+   //   return false;
+   // });
 
-    const props = route.props;
 		switch (route.id) {
       case 'login':
-        return <LoginPage navigator={navigator} {...props} />
+        return <LoginPage navigator={navigator} />
       // case 'search':
       //   return <SearchComponent navigator={navigator} route={route}/>;
       case 'home':
-        return <HomePage navigator={navigator} {...props} />
+        return <HomePage navigator={navigator} />
       case 'events':
-        return <Events navigator={navigator} {...props} />
+        return <Events navigator={navigator} />
       case 'explore':
-        return <Explore navigator={navigator} {...props} />
+        return <Explore navigator={navigator} />
       case 'conversations':
-        return <Conversations navigator={navigator} {...props} />
+        return <Conversations navigator={navigator} />
       case 'I':
-        return <I navigator={navigator} {...props} />
+        return <I navigator={navigator} />
       default:
         throw new Error(`unknown route id: ${route.id}`)
         return null

@@ -8,7 +8,8 @@ import {
 } from 'react-native'
 import CodePush from 'react-native-code-push'
 import { version } from '../env.js'
-import Routes from './navigations/Routes'
+import HomePage from './HomePage'
+import LoginPage from './LoginPage'
 import Pallete from 'Pallete'
 import { init as initMeteor } from '../apis/Meteor'
 import { init as initI18N } from '../i18n'
@@ -76,17 +77,14 @@ class App extends Component {
 
   render() {
     if (this.state.isLoggedIn) {
-      return Routes.navigator({id: 'home', hideNavigationBar: true},
-        (ref) => { this.refs.navigator = ref }
-      )
+      return <HomePage />
     } else {
-      return Routes.navigator({id: 'login', hideNavigationBar: true},
-        (ref) => { this.refs.navigator = ref }
-      )
+      return <LoginPage onLoggedIn={() => {
+          this.setState({isLoggedIn: true})
+        }} />
     }
   }
 
 }
-
 
 export default App

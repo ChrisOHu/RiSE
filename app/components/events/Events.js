@@ -1,3 +1,7 @@
+/**
+ * Author ChrisHu (huhuaishun@gmail.com)
+ */
+
 import React, {
   PropTypes as T,
   Component
@@ -51,17 +55,7 @@ class Events extends Component {
   }
 
   _renderRowView(rowData) {
-    return (
-      <TouchableHighlight
-        key={rowData}
-        style={styles.row}
-        underlayColor='#c8c7cc'
-        onPress={() => this._onPress(rowData)}
-      >
-        {/*<EventCard theme={theme} />*/}
-        <Text>{rowData}</Text>
-      </TouchableHighlight>
-    );
+    return <EventCard theme={theme} />
   }
 
   _renderSectionHeaderView(sectionData, sectionID) {
@@ -192,11 +186,11 @@ class Events extends Component {
 
 const styles = StyleSheet.create({
   content: {
+    paddingTop: theme.toolbarHeight,
     flex: 1
   },
   row: {
-    padding: 10,
-    height: 44
+    flex: 1
   },
   header: {
     backgroundColor: '#50a4ff',
@@ -231,8 +225,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createContainer(params => {
-  return {
-    events: []
-  }
-}, Events)
+// export default createContainer(params => {
+//   return {
+//     events: []
+//   }
+// }, Events)
+
+export default Events

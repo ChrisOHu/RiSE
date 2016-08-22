@@ -42,27 +42,42 @@ const HomeTabBar = React.createClass({
   },
 
   render() {
-    return <View style={[styles.tabs, this.props.style, ]}>
-      {this.props.tabs.map((tab, i) => {
-        let iconName;
-        switch (tab) {
-          case 'events':
-          default:
-            iconName = 'ios-paper';
-            break;
-        }
-        return (
-          <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
-            <Icon
-              name={iconName}
-              size={30}
-              color={this.props.activeTab === i ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
-              ref={(icon) => { this.tabIcons[i] = icon; }}
-            />
-          </TouchableOpacity>
-        );
-      })}
-    </View>;
+    return (
+      <View style={[styles.tabs, this.props.style]}>
+        <TouchableOpacity onPress={() => this.props.goToPage(0)} style={styles.tab}>
+          <Icon
+            name='ios-paper'
+            size={30}
+            color={this.props.activeTab === 0 ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+            ref={(icon) => { this.tabIcons[0] = icon; }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.goToPage(1)} style={styles.tab}>
+          <Icon
+            name='ios-paper'
+            size={30}
+            color={this.props.activeTab === 1 ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+            ref={(icon) => { this.tabIcons[1] = icon; }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.goToPage(2)} style={styles.tab}>
+          <Icon
+            name='ios-paper'
+            size={30}
+            color={this.props.activeTab === 2 ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+            ref={(icon) => { this.tabIcons[2] = icon; }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.goToPage(3)} style={styles.tab}>
+          <Icon
+            name='ios-paper'
+            size={30}
+            color={this.props.activeTab === 3 ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+            ref={(icon) => { this.tabIcons[3] = icon; }}
+          />
+        </TouchableOpacity>
+      </View>
+    )
   },
 });
 
