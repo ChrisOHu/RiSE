@@ -6,7 +6,7 @@
     "jsx": true
   },
   "rules": {
-    "valid-jsdoc": 2,
+    "valid-jsdoc": 0,
     // Disable until Flow supports let and const
     "no-var": 0,
     "no-undef": 0,

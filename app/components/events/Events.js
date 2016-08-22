@@ -12,10 +12,14 @@ import {
   View,
   TouchableHighlight
 } from 'react-native'
+
+import moment from 'moment'
+
 import GiftedListView from 'common/GiftedListView'
 import GiftedSpinner from 'common/GiftedSpinner'
 import EventCard from './EventCard'
 import theme from 'app/themes/default'
+import Pallete from 'Pallete'
 
 import Meteor, { createContainer } from 'react-native-meteor'
 
@@ -34,16 +38,17 @@ class Events extends Component {
 
   _onFetch(page = 1, callback, options) {
     setTimeout(() => {
-      var rows = {
-        [`Section ${page}`]: [
-          'row '+((page - 1) * 3 + 1),
-          'row '+((page - 1) * 3 + 2),
-          'row '+((page - 1) * 3 + 3)
+      let now = moment(new Date()).fromNow()
+      let rows = {
+        [`${now}`]: [
+          MOCK[0],
+          MOCK[0],
+          MOCK[0]
         ]
       };
       if (page === 3) {
         callback(rows, {
-          allLoaded: true, // the end of the list is reached
+          allLoaded: true // the end of the list is reached
         });
       } else {
         callback(rows);
@@ -55,7 +60,7 @@ class Events extends Component {
   }
 
   _renderRowView(rowData) {
-    return <EventCard theme={theme} />
+    return <EventCard theme={theme} event={rowData} />
   }
 
   _renderSectionHeaderView(sectionData, sectionID) {
@@ -68,15 +73,11 @@ class Events extends Component {
     );
   }
 
-  /**
-   * Render the pagination view when waiting for touch
-   * @param {function} paginateCallback The function to call to load more rows
-   */
   _renderPaginationWaitingView(paginateCallback) {
     return (
       <TouchableHighlight
         key="paginationWaitingView"
-        underlayColor='#c8c7cc'
+        underlayColor="#c8c7cc"
         onPress={paginateCallback}
         style={styles.paginationView}
       >
@@ -123,7 +124,7 @@ class Events extends Component {
         </Text>
 
         <TouchableHighlight
-          underlayColor='#c8c7cc'
+          underlayColor="#c8c7cc"
           onPress={refreshCallback}
         >
           <Text>
@@ -139,7 +140,7 @@ class Events extends Component {
    */
   _renderSeparatorView(sectionID, rowID, adjacentRowHighlighted) {
     return (
-      <View key={`${sectionID}-${rowID}`} style={styles.separator} />
+      <View key={`${sectionID}-${rowID}`} style={styles.line} />
     );
   }
 
@@ -199,10 +200,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: '#fff'
   },
-  separator: {
-    height: 1,
-    backgroundColor: '#CCC'
-  },
+  line: Pallete.styles.horizontalLine,
   actionsLabel: {
     fontSize: 20,
     color: '#007aff'
@@ -232,3 +230,30 @@ const styles = StyleSheet.create({
 // }, Events)
 
 export default Events
+
+const MOCK = [
+  {
+    name: 'Event Name',
+    createdAt: 'Creation time',
+    owner: {
+      /**
+       * the image name in require has to be known statically
+       * see https://facebook.github.io/react-native/docs/images.html
+       */
+      avatar: require('../MOCK/hye.png'),
+      name: 'Owner Name'
+    },
+    price: 'Price',
+    slogan: 'Slogan',
+    time: 'Time',
+    descriptions: 'Descriptions...',
+    address: 'Address...',
+    poster: 'https://drscdn.500px.org/photo/82642655/q%3D80_m%3D1500/1163b7cbf7cce0c2946307b94a9751d2',
+    tags: [],
+    attenders: [],
+    comments: [],
+    attendersCount: 0,
+    commentsCount: 0
+  }
+]
+

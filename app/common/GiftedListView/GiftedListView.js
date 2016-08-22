@@ -62,6 +62,7 @@ var GiftedListView = React.createClass({
   },
 
   propTypes: {
+    rowView: React.PropTypes.func,
     customStyles: React.PropTypes.object,
     initialListSize: React.PropTypes.number,
     firstLoader: React.PropTypes.bool,
