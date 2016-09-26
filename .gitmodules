@@ -6,7 +6,7 @@
     path = modules/react-native-image-crop-picker
     url = git@github.com:ChrisOHu/react-native-image-crop-picker.git
 
-[submodule "react-native-meteor"]
-    path = modules/react-native-meteor
-    url = git@github.com:ChrisOHu/react-native-meteor.git
+[submodule "react-native-elements"]
+    path = modules/react-native-elements
+    url = git@github.com:ChrisOHu/react-native-elements.git
 
