@@ -11,7 +11,6 @@ import { version } from '../env.js'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
 import Pallete from 'Pallete'
-import { init as initMeteor } from '../apis/Meteor'
 import { init as initI18N } from '../i18n'
 
 class App extends Component {
@@ -77,11 +76,13 @@ class App extends Component {
 
   render() {
     if (this.state.isLoggedIn) {
-      return <HomePage />
+      return ( <HomePage /> )
     } else {
-      return <LoginPage onLoggedIn={() => {
+      return (
+        <LoginPage onLoggedIn={() => {
           this.setState({isLoggedIn: true})
         }} />
+      )
     }
   }
 

@@ -1,8 +1,19 @@
-import React from 'react';
+import React from 'react'
 import {
   AppRegistry
-} from 'react-native';
+} from 'react-native'
+import { Provider } from 'react-redux'
 
-import App from './app/components/App'
+import configureStore from './app/store'
+import App from './app/App'
 
-AppRegistry.registerComponent('upmo', () => App);
+const store = configureStore()
+
+AppRegistry.registerComponent('RiSE', () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+})
+
