@@ -7,5 +7,5 @@ import {
 import App from './app/App'
 
 
-AppRegistry.registerComponent('RiSE', App)
+AppRegistry.registerComponent('RiSE', () => App)
 

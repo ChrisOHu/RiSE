@@ -8,12 +8,6 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-import { ScrollableTabView } from 'common/ScrollableTabView'
-
-import Routes from './navigations/Routes'
-import theme from 'themes'
-import HomeTabBar from './HomeTabBar'
-
 class Home extends Component {
   constructor(props) {
     super(props)
@@ -25,20 +19,7 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.content} >
-
-        <ScrollableTabView
-          initialPage={0}
-          tabBarPosition={"bottom"}
-          renderTabBar={() => <HomeTabBar />}
-          >
-
-          {Routes.navigator({id: 'events'})}
-          {Routes.navigator({id: 'explore'})}
-          {Routes.navigator({id: 'conversations'})}
-          {Routes.navigator({id: 'I'})}
-
-        </ScrollableTabView>
-
+        Home
       </View>
     );
   }
