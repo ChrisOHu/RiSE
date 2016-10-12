@@ -1,6 +1,7 @@
 package com.upmo;
 
 import com.facebook.react.ReactActivity;
+import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 import com.github.yamill.orientation.OrientationPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.rnfs.RNFSPackage;
@@ -16,7 +17,15 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.cboy.rn.splashscreen.SplashScreen;
+
 public class MainActivity extends ReactActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.show(this);
+        super.onCreate(savedInstanceState);
+    }
 
     /**
      * Returns the name of the main component registered from JavaScript.
@@ -44,6 +53,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new SplashScreenReactPackage(),
             new OrientationPackage(this),
             new RNSpinkitPackage(),
             new RNFSPackage(),

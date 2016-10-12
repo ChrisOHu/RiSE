@@ -20,7 +20,7 @@ import theme from 'themes'
 // import Button from './components/Button'
 // import AutoComplete from './components/AutoComplete'
 
-class LoginPage extends Component {
+class Login extends Component {
   static propTypes = {
     onLoggedIn: T.func
   }
@@ -69,14 +69,14 @@ class LoginPage extends Component {
             text={"Login"}
             />
           <View style={{
-              flex: 1,
-              flexDirection: 'row',
-              flexWrap: 'nowrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingLeft: 20,
-              paddingRight: 20
-            }} >
+            flex: 1,
+            flexDirection: 'row',
+            flexWrap: 'nowrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingLeft: 20,
+            paddingRight: 20
+          }} >
             <TouchableOpacity style={{marginRight: 5}} >
               <Text style={{fontSize: 12}}>
                 Forgot Password ?
@@ -115,4 +115,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LoginPage
+export default Login
+

@@ -21,7 +21,7 @@ import LoginPage from 'app/components/LoginPage'
 import Pallete from 'Pallete'
 import { init as initI18N } from '../i18n'
 
-import configureStore from './app/store'
+import configureStore from 'app/store'
 
 
 const RouterWithRedux = connect()(Router)

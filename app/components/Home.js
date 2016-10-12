@@ -14,7 +14,7 @@ import Routes from './navigations/Routes'
 import theme from 'themes'
 import HomeTabBar from './HomeTabBar'
 
-class HomePage extends Component {
+class Home extends Component {
   constructor(props) {
     super(props)
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   tabView: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   card: {
     borderWidth: 1,
@@ -61,10 +61,11 @@ const styles = StyleSheet.create({
     height: 150,
     padding: 15,
     shadowColor: '#ccc',
-    shadowOffset: { width: 2, height: 2, },
+    shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 0.5,
-    shadowRadius: 3,
+    shadowRadius: 3
   }
 });
 
-export default HomePage
+export default Home
+

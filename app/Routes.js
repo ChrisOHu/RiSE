@@ -17,10 +17,14 @@ import {
   ActionConst
 } from 'react-native-router-flux'
 
-import Login from 'app/components'
-import Home from 'app/components'
-import Launch from 'app/components'
-import Intro from 'app/components'
+import {
+  Launch,
+  Login,
+  LoginModal,
+  Intro,
+  Home,
+  TabView
+} from 'app/components'
 
 const reducerCreate = (params) => {
   const defaultReducer = new Reducer(params)
@@ -58,28 +62,20 @@ const styles = StyleSheet.create({
 class Routes extends Component {
   render() {
     return (
-      <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle}>
+      <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle} >
         {/* § Modal */}
         <Scene key="modal" component={Modal} >
           {/* §§ root */}
-          <Scene key="root" hideNavBar hideTabBar>
+          <Scene key="root" hideNavBar hideTabBar >
             <Scene key="launch" component={Launch} title="Launch" initial />
-            <Scene key="register" component={Register} title="Register" />
+            <Scene key="intro" component={Intro} />
             <Scene key="login" direction="vertical" >
               <Scene key="loginModal" direction="vertical" component={Login} title="Login" />
               <Scene
-                key="loginModal2"
+                key="loginModal1"
                 hideNavBar
-                component={Login2}
-                title="Login2"
-                panHandlers={null}
-                duration={1}
-              />
-              <Scene
-                key="loginModal3"
-                hideNavBar
-                component={Login3}
-                title="Login3"
+                component={LoginModal}
+                title="LoginModal"
                 panHandlers={null}
                 duration={1}
               />
