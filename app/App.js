@@ -6,12 +6,26 @@ import {
   StatusBar,
   BackAndroid
 } from 'react-native'
+
+import { Router } from 'react-native-router-flux'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import { connect } from 'react-redux'
+
 import CodePush from 'react-native-code-push'
+
 import { version } from '../env.js'
-import HomePage from './HomePage'
-import LoginPage from './LoginPage'
+import Routes from 'app/Routes'
+import HomePage from 'app/components/HomePage'
+import LoginPage from 'app/components/LoginPage'
 import Pallete from 'Pallete'
 import { init as initI18N } from '../i18n'
+
+import configureStore from './app/store'
+
+
+const RouterWithRedux = connect()(Router)
+const store = configureStore()
 
 class App extends Component {
   static propTypes    = { }
@@ -37,7 +51,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    initMeteor();
     initI18N();
 
     AppState.addEventListener('change', this.handleAppStateChange);
@@ -66,26 +79,26 @@ class App extends Component {
       }
     }
 
-    if (this.refs.navigator.getCurrentRoutes().length > 1) {
-      this.refs.navigator.pop();
-      return true;
-    }
+    //TODO: pop routes
+    //if (this.refs.navigator.getCurrentRoutes().length > 1) {
+    //  this.refs.navigator.pop();
+    //  return true;
+    //}
 
-    return false;
+    return false
   }
 
   render() {
-    if (this.state.isLoggedIn) {
-      return ( <HomePage /> )
-    } else {
-      return (
-        <LoginPage onLoggedIn={() => {
-          this.setState({isLoggedIn: true})
-        }} />
-      )
-    }
+    return (
+      <Provider store={store} >
+        <RouterWithRedux>
+          <Routes />
+        </RouterWithRedux>
+      </Provider>
+    )
   }
 
 }
 
 export default App
+
