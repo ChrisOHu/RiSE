@@ -81,7 +81,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.upmo"
+        applicationId "com.rise"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -120,6 +120,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-blur')
     compile project(':react-native-splash-screen')
     compile project(':react-native-orientation')
     compile project(':react-native-spinkit')

@@ -1,6 +1,7 @@
-package com.upmo;
+package com.rise;
 
 import com.facebook.react.ReactActivity;
+import com.cmcewen.blurview.BlurViewPackage;
 import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 import com.github.yamill.orientation.OrientationPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
@@ -33,7 +34,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "upmo";
+        return "rise";
     }
 
     /**
@@ -53,6 +54,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new BlurViewPackage(),
             new SplashScreenReactPackage(),
             new OrientationPackage(this),
             new RNSpinkitPackage(),

@@ -1,0 +1,33 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target 'rise' do
+  # Pods for rise
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'RCTWebSocket', # needed for debugging
+    'ART',
+    'RCTActionSheet',
+    'RCTAnimation',
+    'RCTCameraRoll',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTPushNotification',
+    'RCTSettings',
+    'RCTVibration',
+    'RCTLinkingIOS',
+    'RCTTest'
+  ]
+  pod 'RSKImageCropper'
+  pod 'QBImagePickerController'
+
+  target 'riseTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
