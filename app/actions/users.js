@@ -1,4 +1,4 @@
-const { feathers } = require('app/globals')()
+const { feathers } = require('../globals')()
 
 export const REGISTER_REQUEST = "REGISTER_REQUEST"
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS"

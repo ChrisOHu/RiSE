@@ -24,7 +24,7 @@ import {
   Intro,
   Home,
   TabView
-} from 'app/components'
+} from './components'
 
 const reducerCreate = (params) => {
   const defaultReducer = new Reducer(params)

@@ -1,13 +1,3 @@
 {
-  "presets": ["react-native"],
-  "plugins": [
-    ["module-alias", [
-      { "src": "./app",                 "expose": "app" },
-      { "src": "./app/common",          "expose": "common" },
-      { "src": "./app/common/Pallete",  "expose": "Pallete" },
-      { "src": "./app/themes",          "expose": "themes" },
-      { "src": "./app/apis",            "expose": "apis" },
-      { "src": "./app/utils",           "expose": "utils" }
-    ]]
-  ]
+  "presets": ["react-native"]
 }

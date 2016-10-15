@@ -20,10 +20,11 @@
     "feathers-socketio": "^1.4.1",
     "moment": "^2.14.1",
     "react": "15.3.2",
-    "react-native": "^0.34.0",
+    "react-native": "^0.35.0",
     "react-native-app-intro": "^1.1.3",
     "react-native-blur": "^1.0.1",
-    "react-native-code-push": "^1.13.1-beta",
+    "react-native-code-push": "^1.15.0-beta",
+    "react-native-experimental-navigation": "^0.26.10",
     "react-native-form-generator": "^0.9.9",
     "react-native-fs": "^1.5.1",
     "react-native-gesture-recognizers": "^0.2.3",
@@ -55,7 +56,6 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "babel-plugin-module-alias": "^1.5.0",
     "babel-preset-react-native": "^1.9.0",
     "redux-logger": "^2.6.1"
   }

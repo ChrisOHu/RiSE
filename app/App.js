@@ -1,4 +1,3 @@
-import React, { Component, PropTypes } from 'react'
 import {
   AppState,
   StyleSheet,
@@ -14,14 +13,10 @@ import { connect } from 'react-redux'
 
 import CodePush from 'react-native-code-push'
 
-import { version } from '../env.js'
-import Routes from 'app/Routes'
-import HomePage from 'app/components/HomePage'
-import LoginPage from 'app/components/LoginPage'
-import Pallete from 'Pallete'
-import { init as initI18N } from '../i18n'
-
-import configureStore from 'app/store'
+import { version } from './env.js'
+import Routes from './Routes'
+import { init as initI18N } from './i18n'
+import configureStore from './store'
 
 
 const RouterWithRedux = connect()(Router)
@@ -54,7 +49,6 @@ class App extends Component {
     initI18N();
 
     AppState.addEventListener('change', this.handleAppStateChange);
-    // CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
 
     BackAndroid.addEventListener('hardwareBackPress', this.handleBackButton);
   }
@@ -67,9 +61,8 @@ class App extends Component {
 
   handleAppStateChange(appState) {
     //'active', 'background'
-    if (state === 'active') {
-      // CodePush.sync({installMode: CodePush.InstallMode.ON_NEXT_RESUME});
-    }
+    //if (state === 'active') {
+    //}
   }
 
   handleBackButton() {
@@ -100,5 +93,10 @@ class App extends Component {
 
 }
 
-export default App
+//  CodePush.sync({
+//      updateDialog: true,
+//      installMode: codePush.InstallMode.IMMEDIATE
+//  });
+
+export default CodePush({checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME})(App)
 

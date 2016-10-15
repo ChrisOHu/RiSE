@@ -25,9 +25,9 @@ target 'rise' do
   pod 'RSKImageCropper'
   pod 'QBImagePickerController'
 
-  target 'riseTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  #target 'riseTests' do
+  #  inherit! :search_paths
+  #  # Pods for testing
+  #end
 
 end

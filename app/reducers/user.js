@@ -11,7 +11,7 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE  
-} from '../actions/accounts'
+} from '../actions/users'
 
 export default function (state = {}, action) {
   switch (action.action) {

@@ -1,35 +1,35 @@
 PODS:
   - QBImagePickerController (3.4.0)
-  - React/ART (0.34.0):
+  - React/ART (0.35.0):
     - React/Core
-  - React/Core (0.34.0)
-  - React/RCTActionSheet (0.34.0):
+  - React/Core (0.35.0)
+  - React/RCTActionSheet (0.35.0):
     - React/Core
-  - React/RCTAnimation (0.34.0):
+  - React/RCTAnimation (0.35.0):
     - React/Core
-  - React/RCTCameraRoll (0.34.0):
+  - React/RCTCameraRoll (0.35.0):
     - React/Core
     - React/RCTImage
-  - React/RCTGeolocation (0.34.0):
+  - React/RCTGeolocation (0.35.0):
     - React/Core
-  - React/RCTImage (0.34.0):
+  - React/RCTImage (0.35.0):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.34.0):
+  - React/RCTLinkingIOS (0.35.0):
     - React/Core
-  - React/RCTNetwork (0.34.0):
+  - React/RCTNetwork (0.35.0):
     - React/Core
-  - React/RCTPushNotification (0.34.0):
+  - React/RCTPushNotification (0.35.0):
     - React/Core
-  - React/RCTSettings (0.34.0):
+  - React/RCTSettings (0.35.0):
     - React/Core
-  - React/RCTTest (0.34.0):
+  - React/RCTTest (0.35.0):
     - React/Core
-  - React/RCTText (0.34.0):
+  - React/RCTText (0.35.0):
     - React/Core
-  - React/RCTVibration (0.34.0):
+  - React/RCTVibration (0.35.0):
     - React/Core
-  - React/RCTWebSocket (0.34.0):
+  - React/RCTWebSocket (0.35.0):
     - React/Core
   - RSKImageCropper (1.5.1)
 
@@ -58,9 +58,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
-  React: 2e2e1e59f9854460b8a688645ef4cc24d5a2dd32
+  React: d80af5410aa500d0cb1bce2cc4493a584cf2ec92
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
 
-PODFILE CHECKSUM: 228ae282dd3918f6daeb8c40f17eeb9bc3d93be0
+PODFILE CHECKSUM: 60638405f0ff31e679f136f732f3036875baf4b7
 
 COCOAPODS: 1.1.0.rc.3
