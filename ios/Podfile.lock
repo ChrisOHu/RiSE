@@ -1,0 +1,66 @@
+PODS:
+  - QBImagePickerController (3.4.0)
+  - React/ART (0.34.0):
+    - React/Core
+  - React/Core (0.34.0)
+  - React/RCTActionSheet (0.34.0):
+    - React/Core
+  - React/RCTAnimation (0.34.0):
+    - React/Core
+  - React/RCTCameraRoll (0.34.0):
+    - React/Core
+    - React/RCTImage
+  - React/RCTGeolocation (0.34.0):
+    - React/Core
+  - React/RCTImage (0.34.0):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.34.0):
+    - React/Core
+  - React/RCTNetwork (0.34.0):
+    - React/Core
+  - React/RCTPushNotification (0.34.0):
+    - React/Core
+  - React/RCTSettings (0.34.0):
+    - React/Core
+  - React/RCTTest (0.34.0):
+    - React/Core
+  - React/RCTText (0.34.0):
+    - React/Core
+  - React/RCTVibration (0.34.0):
+    - React/Core
+  - React/RCTWebSocket (0.34.0):
+    - React/Core
+  - RSKImageCropper (1.5.1)
+
+DEPENDENCIES:
+  - QBImagePickerController
+  - React/ART (from `../node_modules/react-native`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTCameraRoll (from `../node_modules/react-native`)
+  - React/RCTGeolocation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTPushNotification (from `../node_modules/react-native`)
+  - React/RCTSettings (from `../node_modules/react-native`)
+  - React/RCTTest (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RSKImageCropper
+
+EXTERNAL SOURCES:
+  React:
+    :path: ../node_modules/react-native
+
+SPEC CHECKSUMS:
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
+  React: 2e2e1e59f9854460b8a688645ef4cc24d5a2dd32
+  RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
+
+PODFILE CHECKSUM: ce765ab7069e20389e3496b920bde03d8e926705
+
+COCOAPODS: 1.1.0.rc.3
