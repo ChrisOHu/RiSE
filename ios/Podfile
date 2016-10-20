@@ -19,11 +19,12 @@ target 'rise' do
     'RCTPushNotification',
     'RCTSettings',
     'RCTVibration',
-    'RCTLinkingIOS',
-    'RCTTest'
+    'RCTLinkingIOS'
+    #'RCTTest'
   ]
   pod 'RSKImageCropper'
   pod 'QBImagePickerController'
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
   #target 'riseTests' do
   #  inherit! :search_paths

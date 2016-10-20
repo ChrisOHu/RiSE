@@ -1,6 +1,7 @@
 import setUpFeathers from './feathers'
+import getGlobals from '../globals'
 
-const globals = require('../globals')()
+const globals = getGlobals()
 
 export const CONNECT_REQUEST = 'CONNECT_REQUEST'
 export const CONNECTED       = 'CONNECTED'

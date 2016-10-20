@@ -3,8 +3,9 @@ import feathers from 'feathers/client'
 import hooks from 'feathers-hooks'
 import authentication from 'feathers-authentication/client'
 import rest from 'feathers-rest/client'
+import getGlobals from '../../globals'
 
-const globals = require('../../globals')()
+const globals = getGlobals()
 
 const host = 'http://localhost:3030'
 

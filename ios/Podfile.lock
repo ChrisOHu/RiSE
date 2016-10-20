@@ -1,5 +1,15 @@
 PODS:
+  - CodePush (1.15.0):
+    - CodePush/Core (= 1.15.0)
+    - CodePush/SSZipArchive (= 1.15.0)
+    - React
+  - CodePush/Core (1.15.0):
+    - React
+  - CodePush/SSZipArchive (1.15.0):
+    - React
   - QBImagePickerController (3.4.0)
+  - React (0.35.0):
+    - React/Core (= 0.35.0)
   - React/ART (0.35.0):
     - React/Core
   - React/Core (0.35.0)
@@ -23,8 +33,6 @@ PODS:
     - React/Core
   - React/RCTSettings (0.35.0):
     - React/Core
-  - React/RCTTest (0.35.0):
-    - React/Core
   - React/RCTText (0.35.0):
     - React/Core
   - React/RCTVibration (0.35.0):
@@ -34,6 +42,7 @@ PODS:
   - RSKImageCropper (1.5.1)
 
 DEPENDENCIES:
+  - CodePush (from `../node_modules/react-native-code-push`)
   - QBImagePickerController
   - React/ART (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
@@ -46,21 +55,23 @@ DEPENDENCIES:
   - React/RCTNetwork (from `../node_modules/react-native`)
   - React/RCTPushNotification (from `../node_modules/react-native`)
   - React/RCTSettings (from `../node_modules/react-native`)
-  - React/RCTTest (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - RSKImageCropper
 
 EXTERNAL SOURCES:
+  CodePush:
+    :path: ../node_modules/react-native-code-push
   React:
     :path: ../node_modules/react-native
 
 SPEC CHECKSUMS:
+  CodePush: caf5a6410056e8819079d7b5543576225dc8f2cd
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   React: d80af5410aa500d0cb1bce2cc4493a584cf2ec92
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
 
-PODFILE CHECKSUM: 60638405f0ff31e679f136f732f3036875baf4b7
+PODFILE CHECKSUM: b69959c5935d69928164f21957f6b4426a1cbaf5
 
 COCOAPODS: 1.1.0.rc.3

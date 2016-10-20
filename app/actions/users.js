@@ -1,4 +1,7 @@
-const { feathers } = require('../globals')()
+import getGlobals from '../globals'
+
+const globals = getGlobals()
+const { feathers } = globals
 
 export const REGISTER_REQUEST = "REGISTER_REQUEST"
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS"

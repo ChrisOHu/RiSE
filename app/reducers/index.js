@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import app from './app'
-import routes from './routes'
+import navigations from './navigations'
 import user from './user'
 
 const rootReducer = combineReducers({
-  app, routes, user
+  app, navigations, user
 })
 
 export default rootReducer

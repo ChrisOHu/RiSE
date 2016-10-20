@@ -6,7 +6,4 @@
     path = modules/react-native-image-crop-picker
     url = git@github.com:ChrisOHu/react-native-image-crop-picker.git
 
-[submodule "react-native-router-flux"]
-    path = modules/react-native-router-flux
-    url = git@github.com:ChrisOHu/react-native-router-flux.git
 

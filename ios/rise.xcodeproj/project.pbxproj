@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -39,7 +38,6 @@
 		88CED3531D25ECE400B3DD59 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88CED34B1D25ECE400B3DD59 /* MaterialIcons.ttf */; };
 		8935519AFA044002A00D4003 /* libRNBlur.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51277857934C4885A76C6DFE /* libRNBlur.a */; };
 		947EA7192E694216B14595DB /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D838C14736444B9BBB85CC6 /* libCodePush.a */; };
-		A21CEE2F16C945E5819A4F5F /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC3BEBBB544461E9202B29D /* libSplashScreen.a */; };
 		A3FC30C6DC834285B8E86F34 /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1748D6A1FD4148D6BD211FBB /* libRNSpinkit.a */; };
 		A7C8121422614D9B89CB7498 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF55CA00D9FD4A7DB3F4C2FB /* libz.tbd */; };
 		B5100FA373294DBDAED5F102 /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A396EE057E43D9818F53ED /* libRNUploader.a */; };
@@ -190,13 +188,6 @@
 			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
 			remoteInfo = RNSpinkit;
 		};
-		88D930BB1DAE150800155C4B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A07CC36753E343DF87244C75 /* SplashScreen.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D7682761D8E76B80014119E;
-			remoteInfo = SplashScreen;
-		};
 		88E354A61DB1D92200599B84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7FAC833FCA6E4ECD9A2E76FD /* imageCropPicker.xcodeproj */;
@@ -216,7 +207,6 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* riseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = riseTests.m; sourceTree = "<group>"; };
 		0A62DFFBC5914A39A5C135A5 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-MediumItalic.ttf"; path = "../node_modules/@shoutem/ui/fonts/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
-		0AC3BEBBB544461E9202B29D /* libSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSplashScreen.a; sourceTree = "<group>"; };
 		0D838C14736444B9BBB85CC6 /* libCodePush.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libCodePush.a; sourceTree = "<group>"; };
 		120C9FD3C2244C6FBBB8D9CB /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -267,7 +257,6 @@
 		8DADF0E9C237448DB24F152B /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		9085650F801553E7D63C44F3 /* Pods_riseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_riseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9293A211A35C4C2C831A910D /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/@shoutem/ui/fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
-		A07CC36753E343DF87244C75 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		A37155ACA64B49D1A5AEBC3A /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTOrientation.xcodeproj; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; };
 		AFE387DADC63414FBF01A218 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Rubik-LightItalic.ttf"; path = "../node_modules/@shoutem/ui/fonts/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		B3A396EE057E43D9818F53ED /* libRNUploader.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNUploader.a; sourceTree = "<group>"; };
@@ -307,7 +296,6 @@
 				FB398EC8443E42829F2DC6A4 /* libRNFS.a in Frameworks */,
 				A3FC30C6DC834285B8E86F34 /* libRNSpinkit.a in Frameworks */,
 				336B0D03E94F4D838D536144 /* libRCTOrientation.a in Frameworks */,
-				A21CEE2F16C945E5819A4F5F /* libSplashScreen.a in Frameworks */,
 				8935519AFA044002A00D4003 /* libRNBlur.a in Frameworks */,
 				82C83C97A508F2CE0C1BAF7C /* Pods_rise.framework in Frameworks */,
 				B9885265168F47DC96158F3B /* libimageCropPicker.a in Frameworks */,
@@ -469,7 +457,6 @@
 				EA9DB32504BD4553BB6F321F /* RNFS.xcodeproj */,
 				C7D50CFF60D24B519BC4A960 /* RNSpinkit.xcodeproj */,
 				A37155ACA64B49D1A5AEBC3A /* RCTOrientation.xcodeproj */,
-				A07CC36753E343DF87244C75 /* SplashScreen.xcodeproj */,
 				8301127ED54249BBA21391CA /* RNBlur.xcodeproj */,
 				7FAC833FCA6E4ECD9A2E76FD /* imageCropPicker.xcodeproj */,
 				8DADF0E9C237448DB24F152B /* CodePush.xcodeproj */,
@@ -580,14 +567,6 @@
 			isa = PBXGroup;
 			children = (
 				88D930AE1DAE150800155C4B /* libRCTOrientation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		88D9309F1DAE150600155C4B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				88D930BC1DAE150800155C4B /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -760,10 +739,6 @@
 					ProductGroup = 88CED3341D256AE600B3DD59 /* Products */;
 					ProjectRef = 88CED3331D256AE600B3DD59 /* RNVectorIcons.xcodeproj */;
 				},
-				{
-					ProductGroup = 88D9309F1DAE150600155C4B /* Products */;
-					ProjectRef = A07CC36753E343DF87244C75 /* SplashScreen.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -904,13 +879,6 @@
 			fileType = archive.ar;
 			path = libRNSpinkit.a;
 			remoteRef = 88D930B61DAE150800155C4B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88D930BC1DAE150800155C4B /* libSplashScreen.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSplashScreen.a;
-			remoteRef = 88D930BB1DAE150800155C4B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		88E354A71DB1D92200599B84 /* libimageCropPicker.a */ = {
@@ -1056,17 +1024,15 @@
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/**",
 				);
 				INFOPLIST_FILE = rise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"/**",
-					"\"$(SRCROOT)/rise\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
@@ -1089,17 +1055,15 @@
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/**",
 				);
 				INFOPLIST_FILE = rise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"/**",
-					"\"$(SRCROOT)/rise\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "$(inherited)";
@@ -1151,7 +1115,6 @@
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
@@ -1203,7 +1166,6 @@
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
 					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-blur/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",

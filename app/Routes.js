@@ -18,7 +18,6 @@ import {
 } from 'react-native-router-flux'
 
 import {
-  Launch,
   Login,
   LoginModal,
   Intro,
@@ -65,14 +64,14 @@ class Routes extends Component {
       <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle} >
         {/* § Modal */}
         <Scene key="modal" component={Modal} >
+
           {/* §§ root */}
           <Scene key="root" hideNavBar hideTabBar >
-            <Scene key="launch" component={Launch} title="Launch" initial />
-            <Scene key="intro" component={Intro} />
+            <Scene key="intro" component={Intro} initial />
             <Scene key="login" direction="vertical" >
               <Scene key="loginModal" direction="vertical" component={Login} title="Login" />
               <Scene
-                key="loginModal1"
+                key="loginModal_sth"
                 hideNavBar
                 component={LoginModal}
                 title="LoginModal"
@@ -91,13 +90,14 @@ class Routes extends Component {
 
               <Scene key="tab1" component={TabView} title="Tab #3" initial hideTabBar icon={TabIcon} />
               <Scene key="tab2" component={TabView} title="Tab #4" hideNavBar icon={TabIcon} />
-              <Scene key="tab3" component={TabView} title="Tab #5" hideTabBar icon={TabIcon} />
+              <Scene key="tab3" component={TabView} title="Tab #5" hideNavBar icon={TabIcon} />
 
             </Scene>
-
           </Scene>
+
           {/* §§ Error */}
           <Scene key="error" component={Error} />
+
         </Scene>
       </Router>
     )
