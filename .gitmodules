@@ -6,4 +6,13 @@
     path = modules/react-native-image-crop-picker
     url = git@github.com:ChrisOHu/react-native-image-crop-picker.git
 
+[submodule "shoutem-ui"]
+    path = modules/shoutem/ui
+    url = git@github.com:ChrisOHu/ui.git
+[submodule "shoutem-theme"]
+    path = modules/shoutem/theme
+    url = git@github.com:ChrisOHu/theme.git
+[submodule "shoutem-animation"]
+    path = modules/shoutem/animation
+    url = git@github.com:ChrisOHu/animation.git
 

@@ -4,15 +4,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "44A2810C8D6597F402EB1670A9904BA0CD2830AA" : 0,
     "5800466D1D613FC9757AEC0D4A1E3067BA273F6D" : 0,
     "24314753B1C272763527C1928F985ADC64E7FB94" : 0,
-    "44A2810C8D6597F402EB1670A9904BA0CD2830AA" : 0
+    "34DEECAF49FBF385E0E593B2619F07077A394A04" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9440EA90-6AED-4148-8E18-243875CD2119",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "44A2810C8D6597F402EB1670A9904BA0CD2830AA" : "RiSE\/",
     "5800466D1D613FC9757AEC0D4A1E3067BA273F6D" : "RiSE\/modules\/react-native-image-crop-picker\/",
     "24314753B1C272763527C1928F985ADC64E7FB94" : "RiSE\/modules\/react-native-uploader\/",
-    "44A2810C8D6597F402EB1670A9904BA0CD2830AA" : "RiSE\/"
+    "34DEECAF49FBF385E0E593B2619F07077A394A04" : "RiSE\/modules\/shoutem\/ui\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "rise",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -22,6 +24,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ChrisOHu\/react-native-uploader.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "24314753B1C272763527C1928F985ADC64E7FB94"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shoutem\/ui.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "34DEECAF49FBF385E0E593B2619F07077A394A04"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:huhuaishun\/rise.git",

@@ -6,9 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "@shoutem/animation": "^0.8.5",
-    "@shoutem/theme": "^0.8.5",
-    "@shoutem/ui": "^0.8.5",
+    "@shoutem/animation": "file:./modules/shoutem/animation",
+    "@shoutem/theme": "file:./modules/shoutem/theme",
+    "@shoutem/ui": "file:./modules/shoutem/ui",
     "aliyun-sdk": "^1.9.3",
     "color": "~0.11.1",
     "counterpart": "^0.17.2",

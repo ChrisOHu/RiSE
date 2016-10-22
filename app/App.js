@@ -14,7 +14,7 @@ import { connect } from 'react-redux'
 import CodePush from 'react-native-code-push'
 
 import { version } from './env.js'
-import Routes from './Routes'
+import Navigator from './Navigator'
 import { init as initI18N } from './i18n'
 import configureStore from './store'
 
@@ -84,9 +84,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        <RouterWithRedux>
-          <Routes />
-        </RouterWithRedux>
+        <Navigator />
       </Provider>
     )
   }

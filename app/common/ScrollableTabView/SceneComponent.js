@@ -3,12 +3,12 @@ const ReactNative = require('react-native');
 const {Component, } = React;
 const {View, StyleSheet, } = ReactNative;
 
-const StaticContainer = require('react-static-container');
+const StaticContainer = require('react-native/Libraries/Components/StaticContainer');
 
 const SceneComponent = (Props) => {
-  const {selected, ...props, } = Props;
+  const {shouldUpdated, ...props, } = Props;
   return <View {...props}>
-      <StaticContainer shouldUpdate={selected}>
+      <StaticContainer shouldUpdate={shouldUpdated}>
         {props.children}
       </StaticContainer>
   </View>;
