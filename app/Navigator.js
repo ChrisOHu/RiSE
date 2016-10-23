@@ -4,6 +4,7 @@ import React, {
 } from 'react'
 import {
   View,
+  Text,
   StyleSheet,
   TouchableOpacity,
   NavigationExperimental
@@ -20,10 +21,12 @@ import {
 import { utils as naviUtils } from './reducers/navigations'
 
 const {
-  NavigationCardStack,
-  NavigationHeader,
-  NavigationPropTypes,
-  NavigationStateUtils
+  Card: NavigationCard,
+  CardStack: NavigationCardStack,
+  Header: NavigationHeader,
+  PropTypes: NavigationPropTypes,
+  StateUtils: NavigationStateUtils,
+  Transitioner: NavigationTransitioner
 } = NavigationExperimental
 
 class Navigator extends Component {
@@ -116,14 +119,10 @@ class Navigator extends Component {
    * };
    */
   _renderHeader(sceneProps) {
-    console.log(sceneProps)
-
-    return renderHeader.apply(this, sceneProps.scene)
+    return renderHeader.call(this, sceneProps.scene)
   }
   _renderScene(sceneProps) {
-    console.log(sceneProps)
-
-    return renderScene.apply(this, sceneProps.scene)
+    return renderScene.call(this, sceneProps.scene)
   }
   _onTabSelect(key) {
     this.props.naviToTab({

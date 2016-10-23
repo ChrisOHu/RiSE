@@ -38,9 +38,9 @@ export function register({email, phone, password}) {
       })
   }
 }
-function registerRequest() { return { action: REGISTER_REQUEST } }
-function registerSuccess() { return { action: REGISTER_SUCCESS } }
-function registerFailure() { return { action: REGISTER_FAILURE } }
+function registerRequest() { return { type: REGISTER_REQUEST } }
+function registerSuccess() { return { type: REGISTER_SUCCESS } }
+function registerFailure() { return { type: REGISTER_FAILURE } }
 
 export function login({email, phone, password}) {
   return (dispatch) => {
@@ -61,9 +61,9 @@ export function login({email, phone, password}) {
       })
   }
 }
-function loginRequest() { return { action: LOGIN_REQUEST } }
-function loginSuccess() { return { action: LOGIN_SUCCESS } }
-function loginFailure() { return { action: LOGIN_FAILURE } }
+function loginRequest() { return { type: LOGIN_REQUEST } }
+function loginSuccess() { return { type: LOGIN_SUCCESS } }
+function loginFailure() { return { type: LOGIN_FAILURE } }
 
 export function logout() {
   return (dispatch) => {
@@ -78,7 +78,7 @@ export function logout() {
       })
   }
 }
-function logoutRequest() { return { action: LOGOUT_REQUEST } }
-function logoutSuccess() { return { action: LOGOUT_SUCCESS } }
-function logoutFailure() { return { action: LOGOUT_FAILURE } }
+function logoutRequest() { return { type: LOGOUT_REQUEST } }
+function logoutSuccess() { return { type: LOGOUT_SUCCESS } }
+function logoutFailure() { return { type: LOGOUT_FAILURE } }
 

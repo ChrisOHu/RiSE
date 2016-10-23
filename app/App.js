@@ -1,3 +1,7 @@
+import React, {
+  Component,
+  PropTypes
+} from 'react'
 import {
   AppState,
   StyleSheet,

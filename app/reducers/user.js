@@ -14,7 +14,7 @@ import {
 } from '../actions/users'
 
 export default function (state = {}, action) {
-  switch (action.action) {
+  switch (action.type) {
     /* REGISTER *****/
     case REGISTER_REQUEST:
       return Object.assign({}, state, { isRegistering: true })

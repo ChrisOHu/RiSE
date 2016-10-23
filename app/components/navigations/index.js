@@ -4,6 +4,7 @@ import React, {
 } from 'react'
 import {
   View,
+  Text,
   StyleSheet
 } from 'react-native'
 
@@ -26,7 +27,7 @@ import {
  * launch: intro, login
  */
 
-function renderHeader(scene) {
+export function renderHeader(scene) {
   const { index, key, route } = scene
 
   switch (key) {
@@ -36,8 +37,8 @@ function renderHeader(scene) {
       return (
         <NavigationBar
           leftComponent={(
-            <Button onPress={this.props.pop()} >
-              <Icon name="cart" />
+            <Button onPress={() => {/*this.props.pop()*/}} >
+              <Icon name="left-arrow" />
             </Button>
           )}
           centerComponent={<Title>key</Title>}
@@ -47,7 +48,7 @@ function renderHeader(scene) {
   }
 }
 
-function renderScene(scene) {
+export function renderScene(scene) {
   const { index, key, route } = scene
 
   switch (key) {
@@ -55,12 +56,12 @@ function renderScene(scene) {
     case 'login':
     default:
       return (
-        <View>{'Scene: ' + key}</View>
+        <View>
+          <Text>
+            {'Scene: ' + key}
+          </Text>
+        </View>
       )
   }
-}
-
-export default {
-  renderHeader, renderScene
 }
 

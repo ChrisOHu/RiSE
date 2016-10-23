@@ -5,7 +5,7 @@ import {
 } from '../actions/app'
 
 export default function(state = { connecting: true, connected: false }, action) {
-  switch (action.action) {
+  switch (action.type) {
     case CONNECT_REQUEST:
       return Object.assign({}, state, {connecting: true})
     case CONNECTED:

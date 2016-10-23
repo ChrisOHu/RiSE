@@ -7,29 +7,29 @@ export const NAVI_TO_TAB    = 'NAVI_TO_TAB'
 
 export function push({route, ...params}) {
   return {
-    action: PUSH,
+    type: PUSH,
     route,
     ...params
   }
 }
 export function pop() {
   return {
-    action: POP
+    type: POP
   }
 }
 export function naviToLaunch() {
   return {
-    action: NAVI_TO_LAUNCH
+    type: NAVI_TO_LAUNCH
   }
 }
 export function naviToHome() {
   return {
-    action: NAVI_TO_HOME
+    type: NAVI_TO_HOME
   }
 }
 export function naviToTab({route, ...params}) {
   return {
-    action: NAVI_TO_TAB,
+    type: NAVI_TO_TAB,
     route
   }
 }

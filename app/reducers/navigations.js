@@ -8,7 +8,7 @@ import {
 import { NavigationExperimental } from 'react-native'
 
 const {
-  NavigationStateUtils
+  StateUtils: NavigationStateUtils
 } = NavigationExperimental
 
 const initialState = {
@@ -49,7 +49,7 @@ export default function reducer(state = initialState, action = {}) {
   const routesKey = utils.getCurrentRoutesStackKey(state)
   const routes = state[routesKey]
 
-  switch (action.action) {
+  switch (action.type) {
     case PUSH: {
       const nextRoutes = NavigationStateUtils.push(routes, action.route)
       return {

@@ -19,19 +19,19 @@ export function connect() {
 
 function connectRequest() {
   return {
-    action: CONNECT_REQUEST
+    type: CONNECT_REQUEST
   }
 }
 
 function connected() {
   return {
-    action: CONNECTED
+    type: CONNECTED
   }
 }
 
 function disconnected() {
   return {
-    action: DISCONNECTED
+    type: DISCONNECTED
   }
 }
 
