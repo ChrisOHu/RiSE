@@ -6,7 +6,6 @@ import {
   BackAndroid
 } from 'react-native'
 
-import { Router } from 'react-native-router-flux'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { connect } from 'react-redux'
@@ -18,8 +17,6 @@ import Navigator from './Navigator'
 import { init as initI18N } from './i18n'
 import configureStore from './store'
 
-
-const RouterWithRedux = connect()(Router)
 const store = configureStore()
 
 class App extends Component {

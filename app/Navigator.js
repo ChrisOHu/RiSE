@@ -5,13 +5,14 @@ import React, {
 import {
   View,
   StyleSheet,
+  TouchableOpacity,
   NavigationExperimental
 } from 'react-native'
 
 import { connect } from 'react-redux'
 
-import TabsBar from './common/TabsBar'
-import { renderHeader, renderScene } from './navigations'
+import TabBar from './common/TabBar'
+import { renderHeader, renderScene } from './components/navigations'
 
 import {
   push, pop, naviToLaunch, naviToHome, naviToTab
@@ -54,8 +55,11 @@ class Navigator extends Component {
     const routesKey = naviUtils.getCurrentRoutesStackKey(navi)
     const routes = navi[routesKey]
 
+    let showTabBar = navi.app.index > 0
+
     return (
-      <View style={styles.navigator}>
+      <View style={styles.container}>
+
         <NavigationCardStack
           key={'stack_' + routesKey}
           onNavigateBack={this.props.pop}
@@ -64,11 +68,31 @@ class Navigator extends Component {
           renderScene={this._renderScene.bind(this)}
           style={styles.navigatorCardStack}
         />
-        {/* TODO
-        <NaviTab
-          navigationState={tabs}
-        />
-        */}
+
+        <TabBar show={showTabBar}
+          disable={!showTabBar}
+          style={styles.tabBarContainer} >
+
+          <View style={styles.tabBar}>
+            <TouchableOpacity style={styles.tabItem} onPress={() => this._onTabSelect('Tab1')}>
+              <View>
+                <Text>Tab 1</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.tabItem}  onPress={() => this._onTabSelect('Tab2')}>
+              <View>
+                <Text>Tab 2</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.tabItem}  onPress={() => this._onTabSelect('Tab3')}>
+              <View>
+                <Text>Tab 3</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+        </TabBar>
+
       </View>
     );
   }
@@ -94,39 +118,41 @@ class Navigator extends Component {
   _renderHeader(sceneProps) {
     console.log(sceneProps)
 
-    return renderHeader(sceneProps.scene)
+    return renderHeader.apply(this, sceneProps.scene)
   }
   _renderScene(sceneProps) {
     console.log(sceneProps)
 
-    return renderScene(sceneProps.scene)
+    return renderScene.apply(this, sceneProps.scene)
   }
-
+  _onTabSelect(key) {
+    this.props.naviToTab({
+      route: {key: key}
+    })
+  }
 }
 
 const styles = StyleSheet.create({
-  navigator: {
-    flex: 1
-  },
-  navigatorCardStack: {
-    flex: 20
-  },
-  tabs: {
+  container: {
     flex: 1,
-    flexDirection: 'row'
+    backgroundColor: 'white'
   },
-  tab: {
+  navigationCardStack: {
+    height: 1000
+  },
+  tabBarContainer: {
+    backgroundColor: 'skyblue'
+  },
+  tabBar: {
+    flex: 1,
+    flexDirection: 'row',
+    borderTopWidth: 1,
+    borderTopColor: 'green'
+  },
+  tabItem: {
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff',
-    flex: 1,
     justifyContent: 'center'
-  },
-  tabText: {
-    color: '#222',
-    fontWeight: '500'
-  },
-  tabSelected: {
-    color: 'blue'
   }
 })
 
