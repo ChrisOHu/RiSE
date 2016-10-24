@@ -21,7 +21,7 @@ const initialState = {
   },
   launch: {
     index: 0,
-    routes: [{key: 'login'}]
+    routes: [{key: 'login'}/*, {key: 'intro'}*/]
   },
   home: {
     index: 0,

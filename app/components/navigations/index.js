@@ -21,18 +21,21 @@ import {
   LoginModal,
   Home,
   TabView
-} from '../index'
+} from '~/app/components'
 
 /**
  * launch: intro, login
  */
 
 export function renderHeader(scene) {
+  /* here key is 'scene_{theKey}' */
   const { index, key, route } = scene
 
-  switch (key) {
+  switch (route.key) {
     case 'intro':
+      return null
     case 'login':
+      return null
     default:
       return (
         <NavigationBar
@@ -51,12 +54,13 @@ export function renderHeader(scene) {
 export function renderScene(scene) {
   const { index, key, route } = scene
 
-  switch (key) {
-    case 'intro':
+  switch (route.key) {
     case 'login':
+      return <Login />
+    case 'intro':
     default:
       return (
-        <View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
           <Text>
             {'Scene: ' + key}
           </Text>

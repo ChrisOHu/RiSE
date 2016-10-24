@@ -38,14 +38,19 @@ class Login extends Component {
   render() {
     return (
       <ParallaxScrollView
-        renderBackground={() =>
-          <Image source={require('./assets/logo.png')} style={styles.logo} />
-        }
-        parallaxHeaderHeight={300}
+        renderBackground={() => {
+          {/*return <Image source={require('./assets/logo.png')} resizeMode='contain' style={styles.logo} />*/}
+          return (
+            <View style={styles.logo} >
+              <Text style={{color: 'white', fontSize: 36, fontWeight: 'bold'}}>{`</>`}</Text>
+            </View>
+          )
+        }}
+        parallaxHeaderHeight={200}
         contentContainerStyle={styles.root}
         style={styles.root} >
         <View style={styles.form} >
-          Login
+          <Text>Login</Text>
         </View>
       </ParallaxScrollView>
     )
@@ -56,12 +61,16 @@ class Login extends Component {
 const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   root: {
+    flex: 1,
     backgroundColor: 'white'
   },
   logo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     width: Dimensions.get('window').width,
-    height: 300,
-    resizeMode: 'contain'
+    height: 200,
+    backgroundColor: 'skyblue'
   },
   form: {
     flex: 1,

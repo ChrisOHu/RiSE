@@ -69,11 +69,20 @@ class Navigator extends Component {
           navigationState={routes}
           renderHeader={this._renderHeader.bind(this)}
           renderScene={this._renderScene.bind(this)}
-          style={styles.navigatorCardStack}
+          style={styles.navigationCardStack}
         />
 
-        <TabBar show={showTabBar}
-          disable={!showTabBar}
+        {this._renderTabBar()}
+
+      </View>
+    );
+  }
+
+  _renderTabBar() {
+    if (this.props.navi.app.index == 1) {
+      return (
+        <TabBar show={true}
+          disable={false}
           style={styles.tabBarContainer} >
 
           <View style={styles.tabBar}>
@@ -95,9 +104,10 @@ class Navigator extends Component {
           </View>
 
         </TabBar>
-
-      </View>
-    );
+      )
+    } else {
+      return null
+    }
   }
 
   /** sceneProps is of NavigationScene:
@@ -137,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   navigationCardStack: {
-    height: 1000
+    flex: 1
   },
   tabBarContainer: {
     backgroundColor: 'skyblue'
