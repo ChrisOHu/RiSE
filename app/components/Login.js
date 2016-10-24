@@ -3,14 +3,24 @@ import React, {
   PropTypes as T
 } from 'react'
 import {
-  View,
-  Text,
   Image,
-  TouchableOpacity,
   StyleSheet,
   Platform,
   Dimensions
 } from 'react-native'
+
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Text,
+  Button,
+  Icon,
+  InputGroup,
+  Input,
+  View
+} from 'native-base'
 
 import ParallaxScrollView from '../common/ParallaxScrollView'
 
