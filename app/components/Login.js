@@ -29,8 +29,9 @@ import ParallaxScrollView from '../common/ParallaxScrollView'
 
 class Login extends Component {
   static propTypes = {
-    onLoggedIn: T.func
+    theme: T.object.isRequired
   }
+
   constructor(props) {
     super(props)
 

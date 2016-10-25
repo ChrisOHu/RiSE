@@ -5,15 +5,11 @@ import React, {
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  NavigationExperimental
 } from 'react-native'
 
-import {
-  NavigationBar,
-  Title,
-  Icon,
-  Button
-} from '@shoutem/ui'
+import { Header, Title, Button, Icon } from 'native-base'
 
 import {
   Intro,
@@ -28,6 +24,7 @@ import {
  */
 
 export function renderHeader(scene) {
+  const { theme } = this.props
   /* here key is 'scene_{theKey}' */
   const { index, key, route } = scene
 
@@ -38,25 +35,28 @@ export function renderHeader(scene) {
       return null
     default:
       return (
-        <NavigationBar
-          leftComponent={(
-            <Button onPress={() => {/*this.props.pop()*/}} >
-              <Icon name="left-arrow" />
-            </Button>
-          )}
-          centerComponent={<Title>key</Title>}
-          rightComponent={<Icon name="share" />}
-        />
+        <Header>
+          <Button transparent>
+            <Icon name="ios-arrow-back" />
+          </Button>
+
+          <Title>Header</Title>
+
+          <Button transparent>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
       )
   }
 }
 
 export function renderScene(scene) {
+  const { theme } = this.props
   const { index, key, route } = scene
 
   switch (route.key) {
     case 'login':
-      return <Login />
+      return <Login theme={theme} />
     case 'intro':
     default:
       return (

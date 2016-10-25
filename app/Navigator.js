@@ -10,9 +10,17 @@ import {
   NavigationExperimental
 } from 'react-native'
 
+import {
+  Container,
+  Content,
+  Footer,
+  FooterTab,
+  Button,
+  Icon
+} from 'native-base'
+
 import { connect } from 'react-redux'
 
-import TabBar from './common/TabBar'
 import { renderHeader, renderScene } from './components/navigations'
 
 import {
@@ -43,7 +51,8 @@ class Navigator extends Component {
     pop          : PropTypes.func.isRequired,
     naviToLaunch : PropTypes.func.isRequired,
     naviToHome   : PropTypes.func.isRequired,
-    naviToTab    : PropTypes.func.isRequired
+    naviToTab    : PropTypes.func.isRequired,
+    theme        : PropTypes.object.isRequired
   }
   static defaultProps = {}
 
@@ -54,7 +63,7 @@ class Navigator extends Component {
   }
 
   render() {
-    const { navi } = this.props;
+    const { navi, theme } = this.props;
     const routesKey = naviUtils.getCurrentRoutesStackKey(navi)
     const routes = navi[routesKey]
 
@@ -81,36 +90,33 @@ class Navigator extends Component {
   _renderTabBar() {
     if (this.props.navi.app.index == 1) {
       return (
-        <TabBar show={true}
-          disable={false}
-          style={styles.tabBarContainer} >
-
-          <View style={styles.tabBar}>
-            <TouchableOpacity style={styles.tabItem} onPress={() => this._onTabSelect('Tab1')}>
-              <View>
-                <Text>Tab 1</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}  onPress={() => this._onTabSelect('Tab2')}>
-              <View>
-                <Text>Tab 2</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.tabItem}  onPress={() => this._onTabSelect('Tab3')}>
-              <View>
-                <Text>Tab 3</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-
-        </TabBar>
+        <Footer >
+          <FooterTab>
+            <Button>
+              Apps
+              <Icon name="ios-apps-outline" />
+            </Button>
+            <Button>
+              Camera
+              <Icon name="ios-camera-outline" />
+            </Button>
+            <Button active>
+              Navigate
+              <Icon name="ios-compass" />
+            </Button>
+            <Button>
+              Contact
+              <Icon name="ios-contact-outline" />
+            </Button>
+          </FooterTab>
+        </Footer>
       )
     } else {
       return null
     }
   }
 
-  /** sceneProps is of NavigationScene:
+  /** sceneProps is of SceneRendererProps:
    *
    * const scene = PropTypes.shape({
    *   index: PropTypes.number.isRequired,
@@ -167,7 +173,8 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    navi: state.navigations
+    navi: state.navigations,
+    theme: state.theme
   }
 }
 

@@ -1,10 +1,10 @@
 
-export const SWITCH_THEME = "SWITCH_THEME"
+export const SWITCH_TO_THEME = "SWITCH_TO_THEME"
 
-export function switchTheme(theme) {
+export function switchToTheme(themeName) {
   return {
-    type: SWITCH_THEME,
-    theme: theme
+    type: SWITCH_TO_THEME,
+    theme: themeName
   }
 }
 
