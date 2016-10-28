@@ -3,6 +3,8 @@ import Color from 'color'
 import { Platform } from 'react-native'
 
 const baseTheme = {
+  // Scene
+  sceneBgColor: 'transparent',
 
   // Badge
   badgeBg: '#ED1727',
@@ -59,7 +61,7 @@ const baseTheme = {
 
   // InputGroup
   inputFontSize: 15,
-  inputBorderColor: '#D9D5DC',
+  inputBorderColor: 'skyblue',
   inputSuccessBorderColor: '#2b8339',
   inputErrorBorderColor: '#ed2f2f',
 

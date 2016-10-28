@@ -70,15 +70,15 @@ class Navigator extends Component {
     let showTabBar = navi.app.index > 0
 
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1, backgroundColor: theme.sceneBgColor}}>
 
         <NavigationCardStack
+          style={{flex: 1}}
           key={'stack_' + routesKey}
           onNavigateBack={this.props.pop}
           navigationState={routes}
           renderHeader={this._renderHeader.bind(this)}
           renderScene={this._renderScene.bind(this)}
-          style={styles.navigationCardStack}
         />
 
         {this._renderTabBar()}
@@ -147,29 +147,7 @@ class Navigator extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white'
-  },
-  navigationCardStack: {
-    flex: 1
-  },
-  tabBarContainer: {
-    backgroundColor: 'skyblue'
-  },
-  tabBar: {
-    flex: 1,
-    flexDirection: 'row',
-    borderTopWidth: 1,
-    borderTopColor: 'green'
-  },
-  tabItem: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+const styles = StyleSheet.create({ })
 
 const mapStateToProps = (state, ownProps) => {
   return {

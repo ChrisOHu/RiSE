@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -23,7 +24,6 @@
 		336B0D03E94F4D838D536144 /* libRCTOrientation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BEE0BBA3B6497384AC3D85 /* libRCTOrientation.a */; };
 		3803F773726A4AF99D56B81B /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C7EA60232954898A5DC619D /* Entypo.ttf */; };
 		3B656771CE3445CE8CE98723 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD613425F1D14E718C4064A1 /* Foundation.ttf */; };
-		3DCAADA0B6554770A371D71C /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 484CA3E2F5C24F7C8244EA21 /* OFL.txt */; };
 		5CB4165BB5094BB7A95287D3 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1680545F0AE146E294618807 /* EvilIcons.ttf */; };
 		82C83C97A508F2CE0C1BAF7C /* Pods_rise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DEA8B5B863AF9961AED908 /* Pods_rise.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -872,7 +872,6 @@
 				3B656771CE3445CE8CE98723 /* Foundation.ttf in Resources */,
 				D9F27A570F784C3EA02F261E /* Octicons.ttf in Resources */,
 				2AAE0080AB534FE8A374C383 /* Zocial.ttf in Resources */,
-				3DCAADA0B6554770A371D71C /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

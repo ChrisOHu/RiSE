@@ -1,14 +1,12 @@
 /* @flow */
 
 import { PropTypes } from 'react'
-import ReactNative, { TextInput, Keyboard, Platform } from 'react-native'
+import ReactNative, { TextInput, Keyboard, UIManager } from 'react-native'
 import TimerMixin from 'react-timer-mixin'
 
 const _KAM_DEFAULT_TAB_BAR_HEIGHT = 49
 const _KAM_KEYBOARD_OPENING_TIME = 250
 const _KAM_EXTRA_HEIGHT = 75
-
-const isAndroid = () => Platform.OS === 'android'
 
 const KeyboardAwareMixin = {
   mixins: [TimerMixin],
@@ -54,12 +52,25 @@ const KeyboardAwareMixin = {
       if (!currentlyFocusedField) {
         return
       }
-      try {
-        this.scrollToFocusedInputWithNodeHandle(currentlyFocusedField)
-      } catch (e) {
-        console.error('OPs =>');
-        console.error(e);
-      }
+
+      UIManager.viewIsDescendantOf(
+        currentlyFocusedField,
+        this.getScrollResponder().getInnerViewNode(),
+        (isAncestor) => {
+          if (isAncestor) {
+            // Check if the TextInput will be hidden by the keyboard
+            UIManager.measureInWindow(currentlyFocusedField, (x, y, width, height) => {
+              if (y + height > frames.endCoordinates.screenY) {
+                this.scrollToFocusedInputWithNodeHandle(currentlyFocusedField)
+              }
+            })
+          }
+        }
+      )
+    }
+
+    if (!this.resetCoords) {
+      this.defaultResetScrollToCoords = this.position
     }
   },
 
@@ -71,17 +82,15 @@ const KeyboardAwareMixin = {
     // Reset scroll position after keyboard dismissal
     if (this.resetCoords) {
       this.scrollToPosition(this.resetCoords.x, this.resetCoords.y, true)
+    } else {
+      this.scrollToPosition(this.defaultResetScrollToCoords.x, this.defaultResetScrollToCoords.y, true)
     }
   },
 
   componentDidMount: function () {
     // Keyboard events
-    const events = {
-      show: isAndroid() ? 'keyboardDidShow' : 'keyboardWillShow',
-      hide: isAndroid() ? 'keyboardDidHide' : 'keyboardWillHide',
-    }
-    this.keyboardWillShowEvent = Keyboard.addListener(events.show, this.updateKeyboardSpace)
-    this.keyboardWillHideEvent = Keyboard.addListener(events.hide, this.resetKeyboardSpace)
+    this.keyboardWillShowEvent = Keyboard.addListener('keyboardWillShow', this.updateKeyboardSpace)
+    this.keyboardWillHideEvent = Keyboard.addListener('keyboardWillHide', this.resetKeyboardSpace)
   },
 
   componentWillUnmount: function () {
@@ -98,21 +107,25 @@ const KeyboardAwareMixin = {
    * @param extraHeight: takes an extra height in consideration.
    */
   scrollToFocusedInput: function (reactNode: Object, extraHeight: number = this.props.extraHeight) {
-    // Android already does this
-    if(isAndroid()) return;
-
     const scrollView = this.refs._rnkasv_keyboardView.getScrollResponder()
     this.setTimeout(() => {
-      //FIXME:
-      // scrollView.scrollResponderScrollNativeHandleToKeyboard(
-      //   reactNode, extraHeight, true
-      // )
+      scrollView.scrollResponderScrollNativeHandleToKeyboard(
+        reactNode, extraHeight, true
+      )
     }, _KAM_KEYBOARD_OPENING_TIME)
   },
 
   scrollToFocusedInputWithNodeHandle: function (nodeID: number, extraHeight: number = this.props.extraHeight) {
     const reactNode = ReactNative.findNodeHandle(nodeID)
     this.scrollToFocusedInput(reactNode, extraHeight)
+  },
+
+  position: {x: 0, y: 0},
+
+  defaultResetScrollToCoords: {x: 0, y: 0},
+
+  handleOnScroll: function (e) {
+    this.position = e.nativeEvent.contentOffset
   },
 }
 
