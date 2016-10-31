@@ -23,6 +23,7 @@
     "import/no-unresolved": [2, { "ignore": ["^[~]"] }]
   },
   "plugins": [
-    "react"
+    "react",
+    "import"
   ]
 }
