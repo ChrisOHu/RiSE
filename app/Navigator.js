@@ -40,12 +40,12 @@ const {
 class Navigator extends Component {
   static propTypes = {
     navi: PropTypes.shape({
-      app    : NavigationPropTypes.navigationState.isRequired,
-      launch : NavigationPropTypes.navigationState.isRequired,
-      home   : NavigationPropTypes.navigationState.isRequired,
-      tab1   : NavigationPropTypes.navigationState.isRequired,
-      tab2   : NavigationPropTypes.navigationState.isRequired,
-      tab3   : NavigationPropTypes.navigationState.isRequired
+      app      : NavigationPropTypes.navigationState.isRequired,
+      launch   : NavigationPropTypes.navigationState.isRequired,
+      home     : NavigationPropTypes.navigationState.isRequired,
+      homes    : NavigationPropTypes.navigationState.isRequired,
+      painters : NavigationPropTypes.navigationState.isRequired,
+      wall     : NavigationPropTypes.navigationState.isRequired
     }).isRequired,
     push         : PropTypes.func.isRequired,
     pop          : PropTypes.func.isRequired,
@@ -59,7 +59,9 @@ class Navigator extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { }
+    this.state = {
+      activeTab: 'homes'
+    }
   }
 
   render() {
@@ -90,23 +92,19 @@ class Navigator extends Component {
   _renderTabBar() {
     if (this.props.navi.app.index == 1) {
       return (
-        <Footer >
+        <Footer>
           <FooterTab>
-            <Button>
-              Apps
-              <Icon name="ios-apps-outline" />
+            <Button active={this.state.activeTab == 'homes'}    onPress={() => this._switchToTab('homes')} >
+              Homes
+              <Icon name="ios-images-outline" />
             </Button>
-            <Button>
-              Camera
-              <Icon name="ios-camera-outline" />
+            <Button active={this.state.activeTab == 'painters'} onPress={() => this._switchToTab('painters')} >
+              Painters
+              <Icon name="ios-color-palette-outline" />
             </Button>
-            <Button active>
-              Navigate
-              <Icon name="ios-compass" />
-            </Button>
-            <Button>
-              Contact
-              <Icon name="ios-contact-outline" />
+            <Button active={this.state.activeTab == 'wall'}       onPress={() => this._switchToTab('wall')} >
+              Wall
+              <Icon name="ios-paw-outline" />
             </Button>
           </FooterTab>
         </Footer>
@@ -140,10 +138,11 @@ class Navigator extends Component {
   _renderScene(sceneProps) {
     return renderScene.call(this, sceneProps.scene)
   }
-  _onTabSelect(key) {
+  _switchToTab(key) {
     this.props.naviToTab({
       route: {key: key}
     })
+    this.setState({activeTab: key})
   }
 }
 

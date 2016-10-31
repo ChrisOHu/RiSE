@@ -13,10 +13,8 @@ import {
 } from 'react-native'
 
 import {
-  Container,
   Header,
   Title,
-  Content,
   View as NbView,
   Text as NbText,
   Button,
@@ -25,8 +23,14 @@ import {
   Input
 } from 'native-base'
 
+import { connect } from 'react-redux'
+
 import { KeyboardAwareScrollView } from '~/app/common/KeyboardAwareViews'
 import ParallaxScrollView from '~/app/common/ParallaxScrollView'
+
+import {
+  naviToHome
+} from '~/app/actions/navigations'
 
 const window = Dimensions.get('window')
 
@@ -35,7 +39,8 @@ const window = Dimensions.get('window')
 
 class Login extends Component {
   static propTypes = {
-    theme: T.object.isRequired
+    theme: T.object.isRequired,
+    naviToHome: T.func
   }
 
   constructor(props) {
@@ -91,7 +96,7 @@ class Login extends Component {
             />
           </InputGroup>
 
-          <Button block rounded >Login</Button>
+          <Button block rounded onPress={this.props.naviToHome} >Login</Button>
         </NbView>
 
       </ParallaxScrollView>
@@ -121,5 +126,18 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login
+const mapStateToProps = (state, ownProps) => {
+  return {}
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    naviToHome   : () => dispatch(naviToHome())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login)
 

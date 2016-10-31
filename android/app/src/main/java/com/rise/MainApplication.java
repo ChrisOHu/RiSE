@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.maps.MapsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -36,6 +37,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new RNSpinkitPackage(),
            new MainReactPackage(),
+            new MapsPackage(),
             new CodePush("_xhxqrft6XsFcbkeYOoH-U5Us-_wN1cJKQhAb", getApplicationContext(), BuildConfig.DEBUG),
             new PickerPackage(),
             new PickerPackage(),

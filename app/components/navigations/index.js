@@ -16,7 +16,9 @@ import {
   Login,
   LoginModal,
   Home,
-  TabView
+  HomesMap,
+  Painters,
+  Wall
 } from '~/app/components'
 
 /**
@@ -37,10 +39,10 @@ export function renderHeader(scene) {
       return (
         <Header>
           <Button transparent>
-            <Icon name="ios-arrow-back" />
+            <Icon name="ios-boat-outline" />
           </Button>
 
-          <Title>Header</Title>
+          <Title>{route.key}</Title>
 
           <Button transparent>
             <Icon name="ios-menu" />
@@ -57,6 +59,12 @@ export function renderScene(scene) {
   switch (route.key) {
     case 'login':
       return <Login theme={theme} />
+    case 'homes-index':
+      return <HomesMap theme={theme} />
+    case 'painters-index':
+      return <Painters theme={theme} />
+    case 'wall-index':
+      return <Wall theme={theme} />
     case 'intro':
     default:
       return (

@@ -12,6 +12,8 @@
 
 #import "RCTRootView.h"
 
+@import GoogleMaps;
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,6 +40,13 @@
 #else
     jsCodeLocation = [CodePush bundleURL];
 #endif
+
+  /**
+   * Google Maps API keys
+   */
+  [GMSServices provideAPIKey:@"AIzaSyAdtdeO3rWp3BEir1Y03Zhg7dsBDS20Fz0"];
+  // Below is the API key for the Places API
+  //[GMSPlacesClient provideAPIKey:@"YOUR_API_KEY"];
 
   /**
    * OPTION 2

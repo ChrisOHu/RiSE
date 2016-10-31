@@ -26,22 +26,22 @@ const initialState = {
   home: {
     index: 0,
     routes: [
-      {key: 'tab1'},
-      {key: 'tab2'},
-      {key: 'tab3'}
+      {key: 'homes'},
+      {key: 'painters'},
+      {key: 'wall'}
     ]
   },
-  tab1: {
+  homes: {
     index: 0,
-    routes: [{key: 'Apple Home'}]
+    routes: [{key: 'homes-index'}, {key: 'homes-list'}, {key: 'home-details'}]
   },
-  tab2: {
+  painters: {
     index: 0,
-    routes: [{key: 'Banana Home'}]
+    routes: [{key: 'painters-index'}, {key: 'painter-details'}]
   },
-  tab3: {
+  wall: {
     index: 0,
-    routes: [{key: 'Orange Home'}]
+    routes: [{key: 'wall-index'}]
   }
 }
 

@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '8.1'
 use_frameworks!
 
 target 'rise' do
@@ -22,9 +22,10 @@ target 'rise' do
     'RCTLinkingIOS'
     #'RCTTest'
   ]
-  pod 'RSKImageCropper'
-  pod 'QBImagePickerController'
-  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+  #pod 'RSKImageCropper'
+  #pod 'QBImagePickerController'
+  #pod 'CodePush', :path => '../node_modules/react-native-code-push'
+  pod 'GoogleMaps'
 
   #target 'riseTests' do
   #  inherit! :search_paths
