@@ -22,9 +22,8 @@ target 'rise' do
     'RCTLinkingIOS'
     #'RCTTest'
   ]
-  #pod 'RSKImageCropper'
-  #pod 'QBImagePickerController'
-  #pod 'CodePush', :path => '../node_modules/react-native-code-push'
+  pod 'RSKImageCropper'
+  pod 'QBImagePickerController'
   pod 'GoogleMaps'
 
   #target 'riseTests' do
