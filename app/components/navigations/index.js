@@ -9,7 +9,14 @@ import {
   NavigationExperimental
 } from 'react-native'
 
-import { Header, Title, Button, Icon } from 'native-base'
+import {
+  Header,
+  InputGroup,
+  Input,
+  Title,
+  Button,
+  Icon
+} from 'native-base'
 
 import {
   Intro,
@@ -35,6 +42,19 @@ export function renderHeader(scene) {
       return null
     case 'login':
       return null
+    case 'homes-index':
+      return (
+        <Header searchBar rounded >
+          <InputGroup>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" />
+            <Icon name="ios-boat-outline" />
+          </InputGroup>
+          <Button transparent>
+            Search
+          </Button>
+        </Header>
+      )
     default:
       return (
         <Header>
