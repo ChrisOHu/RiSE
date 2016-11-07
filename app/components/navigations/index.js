@@ -43,18 +43,7 @@ export function renderHeader(scene) {
     case 'login':
       return null
     case 'homes-index':
-      return (
-        <Header searchBar rounded >
-          <InputGroup>
-            <Icon name="ios-search" />
-            <Input placeholder="Search" />
-            <Icon name="ios-boat-outline" />
-          </InputGroup>
-          <Button transparent>
-            Search
-          </Button>
-        </Header>
-      )
+      return null
     default:
       return (
         <Header>
